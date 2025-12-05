@@ -1,5 +1,7 @@
 package com.railStock.rail_stock.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /**
  * Data Transfer Object (DTO) zur Repräsentation der Formulardaten einer Lokomotive.
  * <p>
@@ -19,7 +21,6 @@ public class LokFormDTO {
     private String epoche;
     private String betriebsart;
     private String herstellerName;
-
 
     /**
      * Gibt die Artikelnummer der Lokomotive zurück.
