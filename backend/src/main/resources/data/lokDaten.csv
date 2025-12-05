@@ -1,0 +1,298 @@
+﻿ArtNumber ;Bezeichnung ;Typ ;Modell ;Stromart ;Spur ;Epoche ;Betriebsart ;Hersteller
+3356;Krokodil;Güterzuglokomotive;BR Be 6/8 III SBB;AC;H0 ;V;Digital;Märklin
+3756;Krokodil;Güterzuglokomotive ;BR Ce 6/8 III SBB grün;AC;H0 ;V;Digital;Märklin
+30501;SBB Elektrolok;Elektrolok-Doppelpackung;Ae 6/6, SBB;AC;H0 ;IV;MFX;Märklin
+32560; Güterzug-Elektrolokomotive Serie Ce 6/8 II „Krokodil“ der Schweizerischen Bundesbahnen (SBB);Elektrolokomotive ;Ce 6/8 II;DC;H0 ;II;MFX;Märklin
+33593;Ausführung 11801 mit 2 Pantographen.;Doppel-Elektrolokomotive;Ae 8/14 SBB;AC;H0 ;IV;Digital;Märklin
+34345;Güterverkehr ;Elektrolokomotive;Re 4/4 II (420) (SBB Cargo);AC;H0 ;V;Digital;Märklin
+34638;Elektrolokomotive;Elektrolokomotive;Serie 460 (SBB);AC;H0 ;V;Digital;Märklin
+36160;Mehrsystemlokomotive mit 4 Dachstromabnehmern;Elektrolokomotive ;BR 193;DC;H0 ;VI;MFX;Märklin
+36193;Gebaut von Siemens als Serienlokomotive aus dem Vectron-Typenprogramm;Elektrolokomotive ;BR 193, Vectron;AC;H0 ;VI;MFX;Märklin
+36195;Mehrsystemlokomotive mit 4 Dachstromabnehmern;Elektrolokomotive ; Baureihe 193;DC;H0 ;VI;MFX;Märklin
+36330; Rangierlokomotive;Elektrolokomotive;Ee 3/3 SBB/CFF/FFS;AC;H0 ;IV;Digital;Märklin
+36331; Rangierlokomotive Serie Ee 3/3 der Schweizerischen Bundesbahnen (SBB/CFF/FFS);Elektrolokomotive;Ee 3/3;AC;H0 ;III;MFX;Märklin
+36332;Elektro-Rangierlokomotiven;Rangierlok-Doppelpackung;Ee 3/3, Halbschuh, SBB;AC;H0 ;III;MFX;Märklin
+36333;Elektrische Rangierlokomotive Serie Ee 3/3 der Schweizerischen Bundesbahnen (SBB/CFF/FFS);Elektrolokomotive ;Ee 3/3;DC;H0 ;III;MFX;Märklin
+36354;Elektrische Rangierlokomotive Serie Ee 3/3 der Schweizerischen Bundesbahnen (SBB/CFF/FFS);Elektro-Rangierlokomotive;Ee 3/3;DC;H0 ;V;MFX;Märklin
+36606;Mehrzwecklokomotive ;Märklin Start up - Elektrolokomotive;Serie 482, SBB/CFF/FFS;AC;H0 ;VI;MFX;Märklin
+36607;Mehrsystem-Elektrolokomotive Baureihe E 186 der Railpool GmbH München, vermietet an die SBB Cargo;Elektrolokomotive;BR E 186, Cargo;AC;H0 ;VI;Digital;Märklin
+36627;Elektrolokomotive Re 482 (1. Bauserie) der Schweizerischen Bundesbahn (SBB);Elektrolokomotive ;Reihe 482 ;AC;H0 ;VI;Digital;Märklin
+36851;Mehrzwecklokomotive ;Elektrolokomotive;BR 482 SBB/CFF/FFS ;AC;H0 ;V;Digital;Märklin
+37044;Elektrolokomotive ;Elektrolokomotive;Serie Re 4/4 I, SBB;AC;H0 ;IV;MFX;Märklin
+37045;Elektrolokomotive ;Elektrolokomotive;Re 4/4 I, SBB;AC;H0 ;IV;MFX;Märklin
+37131;Tenderlokomotive;Tenderlokomotive;Eb 3/5 SBB Tenderlok;AC;H0 ;II ;Digital;Märklin
+37136;Tenderlokomotive;Tenderlokomotive;Eb 3/5 (SBB) ;AC;H0 ;III;MFX;Märklin
+37137;Tenderlokomotive;Tenderlokomotive;Serie Eb 3/5, SBB;AC;H0 ;III;MFX;Märklin
+37191;"Tender-Dampflokomotive Serie Eb 3/5 ""Habersack"" der Schweizerischen Bundesbahnen (SBB)";Tender-Dampflokomotive;Eb 3/5;DC;H0 ;III;MFX;Märklin
+37195;Tenderlokomotive Serie Eb 3/5;Tenderlokomotive;Serie Eb 3/5, SBB;AC;H0 ;III;MFX;Märklin
+37202;Schwesterlok der G 2000 BB: das Modell in der Ausführung der SBB Cargo;Diesellokomotive;G 2000 BB;AC;H0 ;VI;MFX;Märklin
+37295;Schwere Diesellokomotive Vossloh G 2000 BB mit symmetrischem Führerhaus;Diesellokomotive ;G 2000 BB;DC;H0 ;VI;MFX;Märklin
+37304;Elektrolokomotive Re 4/4 II als Re 420 der Schweizerischen Bundesbahnen (SBB);Elektrolokomotive ;Re 420;DC;H0 ;VI;MFX;Märklin
+37306;Elektrolokomotive Serie Re 4/4 II der Schweizerischen Bundesbahnen (SBB);Elektrolokomotive ;Re 4/4 II;DC;H0 ;V;MFX;Märklin
+37320;"E-Lok Doppeltraktion ""Re 10/10""";E-Lok Doppeltraktion;Re 6/6, Re 4/4 II, SBB;AC;H0 ;IV;MFX;Märklin
+37321;Elektrolokomotive;Elektrolokomotive;Re 6/6 SBB;AC;H0 ;V;MFX;Märklin
+37322;Elektrolokomotive;Elektrolokomotive;Re 6/6 SBB;AC;H0 ;V;MFX;Märklin
+37323;"E-Lok Doppeltraktion ""Re 10/10"" gealtert";E-Lok Doppeltraktion;Re 6/6, Re 4/4 II, SBB;AC;H0 ;IV;MFX;Märklin
+37324;Elektrolokomotive;Elektrolokomotive;Serie Re 6/6 f, SBB/CFF/FFS;AC;H0 ;V;MFX;Märklin
+37325;Elektrolokomotive;Elektrolokomotive;Serie Re 6/6, SBB/CFF/FFS;AC;H0 ;V;MFX;Märklin
+37326;Schwere Elektrolokomotive Serie Re 6/6 als Re 620 der Schweizerischen Bundesbahnen (SBB);Elektrolokomotive ;Reihe 620;DC;H0 ;VI;MFX;Märklin
+37327;eingesetzt für den Güterverkehrsbereich SBB Cargo. Ausführung in feuerrot/ultramarinblauer Grundfarbgebung;Elektrolokomotive ;Re 620;DC;H0 ;VI;MFX;Märklin
+37328; Ausführung in tannengrüner Grundfarbgebung;Elektrolokomotive ;Re 620;DC;H0 ;VI;MFX;Märklin
+37340;Elektrolokomotive Re 4/4 II als Re 421 der Schweizerischen Bundesbahnen (SBB), eingesetzt im Güterverkehrsbereich SBB Cargo. Feuerrot/ultramarinblaue Grundfarbgebung.;Elektrolokomotive ;Re 421;AC;H0 ;VI;MFX;Märklin
+37343;Trans Europ Express;Elektrische Lokomotive;Re 4/4 II SBB-CFF-FFS;AC;H0 ;IV;Digital;Märklin
+37345; Ausführung für grenzüberschreitenden Verkehr;Elektrolokomotive;Serie 421 SBB Cargo;AC;H0 ;V;Digital;Märklin
+37347;Umbauversion in roter Grundfarbgebung;Elektrolokomotive;Serie Re 4/4 II, SBB;AC;H0 ;VI;MFX;Märklin
+37348;Umbauversion im Rahmen des LION-Programms;Elektrolokomotive;Re 4/4 II SBB;AC;H0 ;VI;MFX;Märklin
+37349;Gehört wie das Matterhorn zur Schweiz: die Re 4/4 II. Einer der Klassiker der Schweizerischen Bundesbahnen (SBB);Elektrolokomotive;Re 4/4 II;AC;H0 ;IV;MFX;Märklin
+37351;Ausführung in Anlehnung an die Gestaltung der Ge 4/4 II Nr. 617 der Rhätischen Bahn;Elektrolokomotive ;Reihe 4/4 II;DC;H0 ;?;MFX;Märklin
+37356;Umbauversion in roter Farbgebung;Elektrolokomotive;Serie Re 4/4II, SBB;AC;H0 ;V;MFX;Märklin
+37359;Ausführung in Tannengrün;Elektrolokomotive;Re 4/4 II;AC;H0 ;IV;MFX;Märklin
+37360;Ausführung in feuerrot/ultramarinblauer Grundfarbgebung der SBB Cargo;Elektrolokomotive;Serie Ae 6/6 als Ae 610, SBB;AC;H0 ;VI;MFX;Märklin
+37361;Kantonslokomotive ;SBB Elektrolokomotive;Ae 6/6 SBB;AC;H0 ;IV;MFX;Märklin
+37362;"Elektrolokomotiven-Doppelpackung ""50 Jahre Ae 6/6""";Elektrolokomotiven-Doppelpackung;Ae 6/6 (SBB);AC;H0 ;IV;MFX;Märklin
+37366;´Wappen-Lok´ 11428 ´Stadt Luzern´ in grüner Farbgebung;Elektrische Mehrzwecklokomotive;Ae 6/6 SBB;AC;H0 ;V;Digital;Märklin
+37437;Elektrolokomotive Serie Ae 6/6 der SBB;Elektrolokomotive;Serie Ae 6/6, SBB ;AC;H0 ;III;MFX;Märklin
+37446;Elektrolokomotive Serie 482 der SBB Cargo;Elektrolokomotive;Serie 482, SBB Cargo;AC;H0 ;VI;MFX;Märklin
+37460;"Namenslok 460 118-3 ""Gotthard""/""Gottardo""";Elektrolokomotive;Re 460 SBB;AC;H0 ;V;MFX;Märklin
+37462;"Lok-Name: ""Dreiländereck""";Elektrolokomotive;Serie Re 460, SBB;AC;H0 ;VI;MFX;Märklin
+37464;"Lok-Name: ""Bözberg""";Elektrolokomotive;Serie Re 460, SBB;AC;H0 ;V;MFX;Märklin
+37473; Blaue Sonderbeklebung zur Elektrifizierung der Strecke Zürich-München in 2021;Elektrolokomotive ;Re 421;DC;H0 ;VI;MFX;Märklin
+37510;Schnellzuglokomotive ;Elektrolokomotive;Ae 3/6 II SBB/CFF/FFS;AC;H0 ;III;Digital;Märklin
+37511;Seetal-Krokodil Rotbraune Grundfarbgebung;Elektrolokomotive ;Serie De 6/6;DC;H0 ;III;MFX;Märklin
+37512;Zwei Elektrolokomotiven;Elektrolokomotiven-Doppelset;Serie Ae 3/6 II (SBB/CFF/FFS);AC;H0 ;III;Digital;Märklin
+37513;Schnellzuglokomotive ;Elektrolokomotive;Serie Ae 3/6 II, SBB,CFF,FFS;AC;H0 ;II;MFX;Märklin
+37514;Schnellzuglokomotive ;Elektrolokomotive ;Serie Ae 3/6 II, SBB,CFF,FFS;AC;H0 ;II;MFX;Märklin
+37515; Dunkelbraune Farbgebung;Elektrolokomotive ;Ae 3/6 II;DC;H0 ;II;MFX;Märklin
+37521;"""Seetal- Krokodil""";Elektrolokomotive;Serie De 6/6 III SBB;AC;H0 ;IV;Digital;Märklin
+37522;"""Seetal-Krokodil"", Ausführung um 1953.";Elektrolokomotive;De 6/6 (SBB/CFF/FFS);AC;H0 ;III;Digital;Märklin
+37524;"""Seetal-Krokodil""";Elektrolokomotive;Serie De 6/6 SBB/CFF/FFS;AC;H0 ;III;Digital;Märklin
+37526;Seetal-Krokodil Braunrote Grundfarbgebung;Elektrolokomotive ;Serie De 6/6;AC;H0 ;VI;MFX;Märklin
+37546;„Graue-Maus“ Euro-City-Zug 154 „Killesberg“;Triebwagen-Zug;Serie RABe, SBB;AC;H0 ;IV;MFX;Märklin
+37547;Viersystem-Elektro-Triebwagenzug Serie RAe, 1. Klasse, der Schweizerischen Bundesbahnen;TEE-Elektro-Triebwagen-Zug;RAe 1.Kl. SBB/CFF/FFS;AC;H0 ;IV;MFX;Märklin
+37565;2 unterschiedliche Güterzuglokomotiven;Krokodil-Doppelpackung;Doppelpackung Ce 6/8 II, SBB;AC;H0 ;III;MFX;Märklin
+37568;Krokodil Bauart aus der ersten Bauserie. Tannengrüne Grundfarbgebung;Elektrolokomotive ;Be 6/8 II;AC;H0 ;III;MFX;Märklin
+37593;Ausführung 11801 mit 2 Pantographen.;Doppel-Elektrolokomotive;Ae 8/14 SBB;AC;H0 ;IV;Digital;Märklin
+37595;Schwere Doppel-Elektrolokomotive;Doppel-Elektrolokomotive;Serie Ae 8/14, SBB;AC;H0 ;III;MFX;Märklin
+37596; Elektrolokomotive ;Elektrolokomotive;Serie Ae 8/14, SBB;AC;H0 ;III;MFX;Märklin
+37627;Mehrzwecklokomotive;Diesellokomotive;Serie Am 842, SBB Cargo;AC;H0 ;V;MFX;Märklin
+37643;Mehrzwecklokomotive;Diesellokomotive;Serie Am 842, SBB Cargo;AC;H0 ;V;MFX;Märklin
+37792;TGV Lyria  in der Ausführung für den Verkehr von Paris nach Basel, Zürich, Bern, Lausanne und Genf;Hochgeschwindigkeitszug ;TGV Lyria;AC;H0 ;VI;MFX;Märklin
+37865;" ""Roter Pfeil""";Elektrischer Triebwagen;Serie RBe 2/4 (SBB-CFF-FFS);AC;H0 ;III;Digital;Märklin
+37866;"""Roter Pfeil"" in roter Grundfarbgebung, gekuppelt mit einem gedeckten Güterwagen mit Bremserhaus";Elektrischer Schnelltriebwagen;Serie RBe 2/4 Roter Pfeil SBB;AC;H0 ;III;MFX;Märklin
+37868;Leichttriebwagen ;Elektrischer Schnelltriebwagen;Serie RBe 2/4, Roter Pfeil, SBB;AC;H0 ;III;MFX;Märklin
+37869;"Elektrischer Schnelltriebwagen Serie RCe 2/4 ""Roter Pfeil"", 3. Klasse";Triebwagen ;RCe 2/4;DC;H0 ;III;MFX;Märklin
+37875;" Sonderbeklebung zum Jubiläum ""175 Jahre Schweizer Bahnen"" in 2022";Elektrolokomotive ;Re 420;DC;H0 ;VI;MFX;Märklin
+38420;Kieselgrau/Blutorange Grundfarbgebung als Zuglokomotive des Swiss Express.;Elektrolokomotive ;Re 4/4 II;DC;H0 ;IV;MFX;Märklin
+38590; Dunkelgrüne Grundfarbgebung. Ausführung mit 2 Pantographen;Elektrolokomotive ;Ae 8/14 ;DC;H0 ;IV;MFX;Märklin
+38801;Lichtgraue Grundfarbgebung mit zwei unterschiedlich gestalteten Seitenflächen;Elektrolokomotive ;Baureihe 186;DC;H0 ;VI;MFX;Märklin
+38860;"Elektrischer Schnelltriebwagen Serie RCe 2/4 ""Roter Pfeil""";Schnelltriebwagen ;RCe 2/4;DC;H0 ;VI;MFX;Märklin
+39081;Diesel-Triebwagenzug Baureihe VT 08.5 der Deutschen Bundesbahn (DB);Diesel-Triebwagenzug;VT 08.5 DB;AC;H0 ;III;MFX;Märklin
+39199;Elektrolokomotive BR 193 (Vectron) der SüdLeasing GmbH, vermietet an die SBB Cargo International AG. Lokname „Limmat“;Elektrolokomotive ;Baureihe 193;DC;H0 ;VI;MFX;Märklin
+39250;"Elefant Gotthard-Dampflokomotive Serie C 5/6 ""Elefant"" der Schweizerischen Bundesbahnen (SBB), mit 3-achsigem Schlepptender";Dampflokomotive ;C 5/6;AC;H0 ;III;MFX;Märklin
+39251;"Güterzug-Dampflokomotive Serie C 5/6 ""Elefant"" der Schweizerischen Bundesbahnen (SBB), mit 3-achsigem Schlepptender und Umbau auf Öl-Hauptfeuerung.";Dampflokomotive ;C 5/6;DC;H0 ;III;MFX;Märklin
+39253;"Elefant Gotthard-Dampflokomotive Serie C 5/6 ""Elefant"" der Schweizerischen Bundesbahnen (SBB), mit 3-achsigem Kohlen-Schlepptender, für den Einsatz im Güter- und Schnellzugverkehr auf der Gotthard-Strecke";Dampflokomotive ;C 5/6 ;DC;H0 ;V;MFX;Märklin
+39260;"Elektrischer Doppel-Triebwagen RAe 4/8 ""Churchill-Pfeil"" der Schweizerischen Bundesbahnen (SBB)";Doppel-Triebwagen;RAe 4/8;DC;H0 ;VI;MFX;Märklin
+39337; Elektrolokomotive BR 193 (Vectron) der SBB Cargo AG im neuen Design;Elektrolokomotive ;Baureihe 193;DC;H0 ;VI;MFX;Märklin
+39360;Elektrolokomotive Ae 3/6 I der Schweizerischen Bundesbahnen (SBB). Lokomotive aus dem achten Baulos. Tannengrüne Grundfarbgebung mit grauem Fahrwerk.;Elektrolokomotive ;Ae 3/6 I;DC;H0 ;III;MFX;Märklin
+39361;Mehrzwecklokomotive ;Elektrolokomotive;Ae 6/6 SBB/CFF/FFS;AC;H0 ;V;Digital;Märklin
+39364;Elektrolokomotive Ae 6/6 „Kantonslok“ der SBB CFF FFS als Museumslok (Verein Mikado 1244, CH-Brugg). Kantonswappen Aargau, Farbgebung Tannengrün Glanzlack;Elektrolokomotive ;Ae 6/6;DC;H0 ;VI;MFX;Märklin
+39365;Elektrolokomotive Ae 6/6 als Museumslok der SBB Historic. Kantonswappen Graubünden/Grischun;Elektrolokomotive ;Ae 6/6;DC;H0 ;VI;MFX;Märklin
+39366;Elektrolokomotive Ae 610 der SBB Cargo. Ultramarinblau/Feuerrote Grundfarbgebung. Betriebsnummer 610 519-1 mit Städtewappen Giubiasco;Elektrolokomotive ;Ae 610;DC;H0 ;V;MFX;Märklin
+39420;Elektrolokomotive Serie Re 4/4 I der Schweizerischen Bundesbahnen (SBB);Elektrolokomotive;Serie Re 4/4 I;AC;H0 ;III;MFX;Märklin
+39421;Elektrolokomotive ;Elektrolokomotive;Serie 4/4 I SBB;AC;H0 ;IV;MFX;Märklin
+39422;Elektrolokomotive Re 4/4 (spätere Re 4/4 I) der Schweizerischen Bundesbahnen (SBB) aus der ersten Bauserie. Saphirblaue Grundfarbgebung.;Elektrolokomotive ;Re 4/4;DC;H0 ;III;MFX;Märklin
+39423;Elektrolokomotive Re 4/4 (spätere Re 4/4 I) der Schweizerischen Bundesbahnen (SBB) aus der ersten Bauserie. Tannengrüne Grundfarbgebung.;Elektrolokomotive ;Re 4/4;DC;H0 ;III;MFX;Märklin
+39460;"Schnelle Mehrzwecklokomotive Serie Re 460 der Schweizerischen Bundesbahnen (SBB/CFF/FFS). Neutrale feuerrote Grundfarbgebung. Lokname: ""Helvetia""";Elektrolokomotive ;Reihe 460;DC;H0 ;VI;MFX;Märklin
+39461;"Schnelle Mehrzwecklokomotive Re 460 der Schweizerischen Bundesbahnen (SBB/CFF/FFS). Neutrale feuerrote Grundfarbgebung. Lokname: ""Munot""";Elektrolokomotive;Re 460;DC;H0 ;VI;MFX;Märklin
+39463;"Elektrolokomotive Re 460 der Schweizerischen Bundesbahnen (SBB/CFF/FFS). Neutrale feuerrote Grundfarbgebung. Lokname: „Hohle Gasse""";Elektrolokomotive ;Re 460;DC;H0 ;VI;MFX;Märklin
+39465;Schnelle Mehrzwecklokomotive Serie Re 460 der Schweizerischen Bundesbahnen (SBB/CFF/FFS) mit Werbegestaltung für Chiquita-Bananen;Elektrolokomotive ;Reihe 460;DC;H0 ;VI;MFX;Märklin
+39467;Schnelle Mehrzwecklokomotive Serie Re 460 der Schweizerischen Bundesbahnen (SBB/CFF/FFS) mit Werbegestaltung zum Anlass des 100-jährigen Jubiläums der Gewerkschaft des Verkehrspersonals SEV (Bern, CH);Elektrolokomotive ;Re 460;DC;H0 ;VI;MFX;Märklin
+39468;Schnelle Mehrzwecklokomotive Serie Re 460 der Schweizerischen Bundesbahnen (SBB/CFF/FFS) mit Werbegestaltung zum Anlass des 100-jährigen Jubiläums des Schweizer National-Circus Knie (Rapperswil, CH);Elektrolokomotive ;Reihe 460;DC;H0 ;VI;MFX;Märklin
+39510;Lokomotive aus der ersten Bauserie. Dunkelbraune Grundfarbgebung mit schwarzem Fahrwerk;Elektrolokomotive ;Be 4/6;DC;H0 ;II;MFX;Märklin
+39511;Lokomotive aus der ersten Bauserie. Tannengrüne Grundfarbgebung mit grauem Fahrwerk.;Elektrolokomotive ;Be 4/6;DC;H0 ;III;MFX;Märklin
+39520;"Güterzug-Elektrolokomotive Serie Fc 2x3/4 ""Köfferli"" (spätere Serie Ce 6/8 I) der Schweizerischen Bundesbahnen (SBB). Ausführung im frühen Auslieferungszustand. Dunkelbraune Grundfarbgebung mit schwarzem Fahrwerk";Elektrolokomotive ;Fc 2x3/4;DC;H0 ;II;MFX;Märklin
+39521;"Güterzug-Elektrolokomotive Serie Ce 6/8 I ""Köfferli"" der Schweizerischen Bundesbahnen (SBB). Tannengrüne Grundfarbgebung mit grauem Fahrwerk";Elektrolokomotive ;Ce 6/8 I;DC;H0 ;III;MFX;Märklin
+39523;"Köfferli Güterzug-Elektrolokomotive Serie Ce 6/8 I ""Köfferli"" der Schweizerischen Bundesbahnen (SBB). Ausführung im frühen Auslieferungszustand";Elektrolokomotive ;Ce 6/8 I;DC;H0 ;II;MFX;Märklin
+39540;"TEE Elektro-Triebzug ""Gottardo""";TEE Elektro-Triebzug;Serie RAe TEE II (SBB/CFF/FFS);AC;H0 ;III;MFX;Märklin
+39560;"Güterzuglokomotive ""Krokodil""";Güterzuglokomotive ;Serie Ce 6/8 III SBB;AC;H0 ;IV;Digital;Märklin
+39561;Güterzuglokomotive;Güterzuglokomotive;Ce 6/8 III SBB;AC;H0 ;II;Digital;Märklin
+39562;"Elektrolokomotive ""Krokodil""";Elektrolokomotive;Ce 6/8 III SBB;AC;H0 ;II;MFX;Märklin
+39563;"Elektrolokomotive ""Krokodil""";Elektrolokomotive ;Serie Ce 6/8 III, SBB/CFF/FFS;AC;H0 ;III;MFX;Märklin
+39564;"Elektrolokomotive ""Krokodil"" Bauart mit Schrägstangenantrieb.";Elektrolokomotive ;Serie Ce 6/8 III, SBB;AC;H0 ;;MFX;Märklin
+39565;"Elektrolokomotive ""Krokodil"" Bauart mit Schrägstangenantrieb. Betriebszustand um 1930";Elektrolokomotive ;Serie Ce 6/8 III, SBB/CFF/FFS;AC;H0 ;II;MFX;Märklin
+39566;Krokodil Güterzuglokomotive Serie Ce 6/8 II „Krokodil“ der Schweizerischen Bundesbahnen (SBB). Bauart aus der ersten Bauserie. Dunkelbraune Grundfarbgebung;Elektrolokomotive ;Ce 6/8 II;AC;H0 ;II;MFX;Märklin
+39567;Krokodil Güterzuglokomotive Serie Ce 6/8 II „Krokodil“ der Schweizerischen Bundesbahnen (SBB). Bauart aus der ersten Bauserie in der Ausführung als Rangier-Krokodil ;Elektrolokomotive ;Ce 6/8 II ;DC;H0 ;IV;MFX;Märklin
+39568;"Krokodil Güterzug-Elektrolokomotive Serie Ce 6/8 III ""Krokodil"" der Schweizerischen Bundesbahnen (SBB). Dunkelbraune Grundfarbgebung";Elektrolokomotive ;Ce 6/8 III;DC;H0 ;II;MFX;Märklin
+39590;Ausführung 11801 mit 2 Pantographen in Versuchslackierung Maschinengrün.;Doppel-Elektrolokomotive;Ae 8/14 SBB;AC;H0 ;III;MFX;Märklin
+39591; Lok-Betriebsnummer 11801 mit 2 Pantographen;Doppel-Elektrolokomotive;Serie Ae 8/14, SBB;AC;H0 ;II;MFX;Märklin
+39595;Krokodil als Museumslokomotive der SBB Historic. Bauart aus der ersten Bauserie. Dunkelbraune Grundfarbgebung;Elektrolokomotive ;Ce 6/8 II;DC;H0 ;VI;MFX;Märklin
+39596;Krokodil Bauart aus der ersten Bauserie. Tannengrüne Grundfarbgebung;Elektrolokomotive ;Be 6/8 II;DC;H0 ;III;MFX;Märklin
+39601;Elektrolokomotive;Elektrolokomotive;460 SBB;AC;H0 ;V;Digital;Märklin
+39602;Elektrolokomotive;Elektrolokomotive;Re 460 SBB;AC;H0 ;V;Digital;Märklin
+39603;Güterzug-Elektrolokomotive Gargo;Güterzug-Elektrolokomotive;460 SBB ;AC;H0 ;V;Digital;Märklin
+39604;Elektrolokomotive;Elektrolokomotive;460 SBB ;AC;H0 ;V;Digital;Märklin
+39605;Elektrolokomotive;Elektrolokomotive;460 SBB;AC;H0 ;V;Digital;Märklin
+39607;Serie 460 der Schweizerischen Bundesbahnen (SBB).;Elektrolokomotive;RE 460;AC;H0 ;V;Digital;Märklin
+39608;Elektrolokomotive;Elektrolokomotive;Serie 460 SBB;AC;H0 ;V;Digital;Märklin
+39610;"Standardlokomotive in der Gestaltung der ""Swiss Collection""";Elektrolokomotive;BR 460 SBB/CFF/FFS;AC;H0 ;V;Digital;Märklin
+39700;RAm I der Schweizerischen Bundesbahnen (SBB-CFF-FFS) und DE 1000 der Niederländischen Eisenbahnen (NS). Ausführung für den Trans Europ Express (TEE);Dieseltriebzug;RAm TEE;AC;H0 ;IV;Digital;Märklin
+39706;"EDELWEISS Dieseltriebzug RAm TEE der Schweizerischen Bundesbahnen (SBB) als TEE ""EDELWEISS"", mit dem Zuglauf Amsterdam - Bruxelles Nord - Luxembourg - Strasbourg - Basel - Zürich. 4-teilige Garnitur in purpurrot/beiger Grundfarbgebung";Dieseltriebzug ;RAm TEE;DC;H0 ;III;MFX;Märklin
+39801; Schwere dieselhydraulische Lokomotive;Diesellokomotive;Serie Am 4/4 (SBB/CFF/FFS);AC;H0 ;V;MFX;Märklin
+39810;"Giruno  Elektrischer Hochgeschwindigkeits-Triebzug EC 250 als RABe 501 ""Giruno"" der Schweizerischen Bundesbahnen (SBB)";Hochgeschwindigkeits-Triebzug;RABe 501;DC;H0 ;VI;MFX;Märklin
+39811;"Giruno Elektrischer Hochgeschwindigkeits-Triebzug EC 250 als RABe 501 ""Giruno"" der Schweizerischen Bundesbahnen (SBB).";Hochgeschwindigkeits-Triebzug;RABe 501;DC;H0 ;VI;MFX;Märklin
+39812;"Elektrischer Hochgeschwindigkeits-Triebzug EC 250 als RABe 501 ""Giruno"" der Schweizerischen Bundesbahnen (SBB)";Hochgeschwindigkeits-Triebzug;RABe 501;DC;H0 ;VI;MFX;Märklin
+39863;Elektrolokomotive Baureihe 189 als ES 64 F4 der MRCE Dispolok GmbH, München, vermietet an die SBB Cargo International;Elektrolokomotive ;BR 189;AC;H0 ;VI;MFX;Märklin
+39893;Schnelle Mehrzwecklokomotive;Elektrolokomotive;Serie 474 SBB ;AC;H0 ;V;MFX;Märklin
+40300;Serie 460 der Schweizerischen Bundesbahnen (SBB);Elektrolokomotive ;Serie 460;AC;H0 ;V;Digital;Märklin
+3005;Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 23;AC ;H0 ;?;Analog;Märklin
+3021;Diesellokomotive;Diesellokomotive;BR V 200;AC ;H0 ;?;Analog;Märklin
+3026;Dampflok;Dampflok;BR 01;AC;H0 ;?;Analog;Märklin
+3046;Schlepptenderlok ;Dampflokomotive ;150X;AC;H0 ;?;Analog;Märklin
+3047;Dampflokomotive ;Dampflokomotive ;BR 44 ;AC;H0 ;?;Analog;Märklin
+3048;Schlepptenderlok ;Dampflokomotive ;BR 01 097;AC;H0 ;?;Analog;Märklin
+3082;Schlepptender ;Dampflok ;BR 41 334;AC;H0 ;?;Analog;Märklin
+3083;ETAT Schlepptenderlok;Dampflok;Baureihe 231;AC;H0 ;?;Analog;Märklin
+3084;DB Schlepptender;Dampflok ;BR 050 082-7;AC;H0 ;?;Analog;Märklin
+3085;DB Schlepptenderlok;Dampflok;BR 003;AC;H0 ;?;Analog;Märklin
+3098;DB Schlepptenderlok;Dampflok;BR 38;AC;H0 ;?;Analog;Märklin
+3099;DR Schlepptenderlok;Dampflok;BR 38;AC;H0 ;?;Analog;Märklin
+3102;DB DRG Schlepptenderlok;Dampflok ;BR 53;AC;H0 ;?;Analog;Märklin
+8385;Hamo Schlepptenderlok ;Dampflok ;BR 003;AC;H0 ;?;Analog;Märklin
+3092;Dampflokomotive mit Schlepptender;Dampflokomotive ;S 3/6;AC;H0 ;?;Analog;Märklin
+3093;Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 18;AC;H0 ;?;Analog;Märklin
+3094;Stromlinienlokomotive;Stromlinienlokomotive;BR 03;AC;H0 ;?;Analog;Märklin
+3111;Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 59;AC;H0 ;?;Analog;Märklin
+3108;Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 44;AC;H0 ;?;Analog;Märklin
+3414;Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 150 Z;AC;H0 ;?;Analog;Märklin
+3319;Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 50;AC;H0 ;?;Analog;Märklin
+3390;Dampflokomotive ;Dampflokomotive ;BR 011;AC;H0 ;?;Analog;Märklin
+3489;Stromlinien Dampflokomotive;Dampflokomotive ;BR 03;AC;H0 ;?;Analog;Märklin
+3791;Dampflokomotive ;Dampflokomotive ;BR 03.10;AC;H0 ;?;Analog;Märklin
+33186;Schnellzuglokomotive mit Tender ;Dampflokomotive ;S3/6;AC;H0 ;V;Analog;Märklin
+33951;Schnellzuglokomotive mit Schlepptender;Dampflokomotive ;BR 003 DB;AC;H0 ;II;Digital;Märklin
+34080;Dampflokomotive ;Dampflokomotive ;BR 10;AC;H0 ;?;Digital;Märklin
+34884;Dampflokomotive ;Dampflokomotive ;BR 44;AC;H0 ;III;Digital;Märklin
+37082;Dampflokomotive ;Dampflokomotive ;BR 10;AC;H0 ;III;Digital;Märklin
+37883;Dampflokomotive ;Dampflokomotive ;BR 44 Öl DB;AC;H0 ;III;MFX;Märklin
+39020;Schlepptender-Schnellzuglokomotive;Dampflokomotive ;BR 18.3 DRG;AC;H0 ;II;MFX;Märklin
+37927;Güterzug-Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 41 Öl, DB;AC;H0 ;III;MFX;Märklin
+37956;Schnellzug-Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 03, DB;AC;H0 ;III;MFX;Märklin
+39030;Schnellzug-Dampflokomotive mit Schlepptender;Dampflokomotive ;BR 18.5;AC;H0 ;III;MFX;Märklin
+36473;Oldtimer-Dampflokomotive;Dampflokomotive ;Rhein SNB;AC;H0 ;I;Analog;Märklin
+37131;Tenderlokomotive;Dampflokomotive ;Eb 3/5 SBB;AC;H0 ;I;Analog;Märklin
+36320;Dampflokomotive;Dampflokomotive ;BR 81 DB;AC;H0 ;III;Analog;Märklin
+37865;Elektrischer Triebwagen;Roter Pfeil;Serie RBe 2/4 (SBB-CFF-FFS);AC;H0 ;III;Analog;Märklin
+37627;Mehrzwecklokomotive ;Diesellokomotive ;Serie Am 842, SBB Cargo;AC;H0 ;V;Analog;Märklin
+36330;Rangierlokomotive;Elektrolokomotive ;Ee 3/3 SBB/CFF/FFS;AC;H0 ;IV;Analog;Märklin
+36331;Rangierlokomotive;Elektrolokomotive ;Ee 3/3;AC;H0 ;III;MFX;Märklin
+37322;Elektrolokomotive;Elektrolokomotive;Re 6/6 SBB;AC;H0 ;V;Analog;Märklin
+37321;Elektrolokomotive;Elektrolokomotive ;Re 6/6 SBB;AC;H0 ;V;Analog;Märklin
+37348;Elektrolokomotive;Elektrolokomotive;Re 4/4 II SBB;AC;H0 ;VI;Analog;Märklin
+34345;Elektrolokomotive;Elektrolokomotive;Re 4/4 II (420) (SBB Cargo);AC;H0 ;V;Digital;Märklin
+37345;Elektrolokomotive;Elektrolokomotive;Serie 421 SBB Cargo;AC;H0 ;V;Analog;Märklin
+39421;Elektrolokomotive;Elektrolokomotive;Serie 4/4 I SBB;AC;H0 ;IV;MFX;Märklin
+39420;Elektrolokomotive;Elektrolokomotive;Serie Re 4/4 I;AC;H0 ;III;MFX;Märklin
+37044;Elektrolokomotive;Elektrolokomotive;Serie Re 4/4 I, SBB;AC;H0 ;IV;Analog;Märklin
+37045;Elektrolokomotive;Elektrolokomotive;Re 4/4 I, SBB;AC;H0 ;IV;Analog;Märklin
+37524;Elektrolokomotive;Elektrolokomotive;Serie De 6/6 SBB/CFF/FFS;AC;H0 ;III;Analog;Märklin
+33591;Elektrische Lokomotive;Elektrische Lokomotive;Ae 8/14 der SBB;AC;H0 ;?;Digital;Märklin
+33592;Elektrische Lokomotive;Elektrische Lokomotive;Ae 8/14 der SBB;AC;H0 ;?;Digital;Märklin
+33593; Elektrische Lokomotive; Elektrische Lokomotive;Ae 8/14 der SBB;AC;H0 ;VI;Analog;Märklin
+37591; Elektrische Lokomotive; Elektrische Lokomotive;Ae 8/14 der SBB;AC;H0 ;?;Digital;Märklin
+3336; Elektrische Lokomotive; Elektrische Lokomotive;AE 6/6 der SBB;AC;H0 ;?;Analog;Märklin
+3337; Elektrische Lokomotive; Elektrische Lokomotive;Ae 6/6 der SBB;AC;H0 ;?;Analog;Märklin
+3339; Elektrische Lokomotive; Elektrische Lokomotive;AE 6/6 der SBB;AC;H0 ;?;Analog;Märklin
+3332; Elektrische Lokomotive; Elektrische Lokomotive;BR Ae 6/6 der SBB;AC;H0 ;?;Analog;Märklin
+3638; Elektrische Lokomotive; Elektrische Lokomotive;BR Ae 6/6 der SBB;AC;H0 ;?;Analog;Märklin
+3338; Elektrische Lokomotive; Elektrische Lokomotive;AE 6/6 der SBB;AC;H0 ;?;Analog;Märklin
+37360; Elektrische Lokomotive; Elektrische Lokomotive;Serie Ae 6/6 als Ae 610, SBB ;AC;H0 ;VI;Analog;Märklin
+39893; Elektrische Lokomotive; Elektrische Lokomotive;Serie 474 SBB;AC;H0 ;V;Analog;Märklin
+36852; Elektrische Lokomotive; Elektrische Lokomotive;Serie 485 (BLS) ;AC;H0 ;V;Analog;Märklin
+36605; Elektrische Lokomotive; Elektrische Lokomotive;BR 185.5, TRAXX;AC;H0 ;VI;Analog;Märklin
+36601; Elektrische Lokomotive; Elektrische Lokomotive;BR 185.5 BLS Cargo;AC;H0 ;V;Analog;Märklin
+3003;Personenzuglokomotive mit Schlepptender;Personenzuglokomotive ;BR 24 DB;AC;H0 ;III;Analog;Märklin
+34638;Elektrolokomotive;Elektrolokomotive;Serie 460 (SBB);AC;H0 ;V;Digital;Märklin
+3031;Tenderlokomotive ;Tenderlokomotive ;BR 81 der DB;AC;H0 ;?;Analog;Märklin
+3032;Tenderlokomotive ;Tenderlokomotive nur ohne Telex;BR 81 der DB;AC;H0 ;?;Analog;Märklin
+83463; Elektrische Lokomotive; Elektrische Lokomotive;Serie 460 der SBB;AC;H0 ;?;Digital;Märklin
+34614;Elektrische Lokomotive;Elektrische Lokomotive;460 der SBB;AC;H0 ;?;Digital;Märklin
+34613;Elektrische Lokomotive Tilsiter ;Elektrische Lokomotive;460 der SBB;AC;H0 ;?;Digital;Märklin
+3452;Elektrische Lokomotive;Elektrische Lokomotive;BR 460 Almauftrieb;AC;H0 ;?;Digital;Märklin
+34617;"E-Lok ""Ascom""";E-Lok;Re 460 SBB;AC;H0 ;?;Digital;Märklin
+34636;"E-Lok ""Rentenanstalt Swiss Life""";E-Lok;Re 460 SBB;AC;H0 ;?;Digital;Märklin
+34615;Elektrische Lokomotive relax;Elektrische Lokomotive;460 der SBB;AC;H0 ;?;Digital;Märklin
+3452;Elektrische Lokomotive ;Elektrische Lokomotive ;BR 460;AC;H0 ;?;Digital;Märklin
+3450;Elektrische Lokomotive;Elektrische Lokomotive;460 SBB ciba;AC;H0 ;?;Digital;Märklin
+34616;Lokomotive ;Lokomotive ;Re 460 HCB;AC;H0 ;?;Digital;Märklin
+3460;Elektrische Lokomotive;Elektrische Lokomotive;460 der SBB;AC;H0 ;?;Analog;Märklin
+83463;Elektrische Lokomotive AGFA FILM;Elektrische Lokomotive ;Serie 460 der SBB;AC;H0 ;?;Digital;Märklin
+3760;Elektrische Lokomotive;Elektrische Lokomotive;Serie 460 der SBB;AC;H0 ;?;Digital;Märklin
+34631;2-teiliges Set Elektrolokomotiven;Elektrolokomotiven ;SBB Re 460;AC;H0 ;?;Digital;Märklin
+34618;Doppeltraktion C-Sinus;Elektrolokomotiven ;SBB Re 460 SF;AC;H0 ;?;Digital;Märklin
+39605;Elektrolokomotive;Elektrolokomotive;460 SBB ;AC;H0 ;V;Digital;Märklin
+3763;Elektrische Lokomotive;Elektrische Lokomotive;Serie 465 der BLS;AC;H0 ;V;Digital;Märklin
+37471 .001;Werbelokomotive ;Werbelokomotive ;Re 460 der SB;AC;H0 ;?;MFX;Märklin
+37467;Eule Lok;Eule Lok;Re 460 VSLF;AC;H0 ;?;Digital;Märklin
+39603;Güterzug-Elektrolokomotive;Güterzug-Elektrolokomotive;460 SBB;AC;H0 ;V;Digital;Märklin
+3752;Elektrische Lokomotive Almauftrieb;Elektrische Lokomotive;BR 460;AC;H0 ;?;Digital;Märklin
+3750; ICE -Triebköpfe Elisabeth MHI; ICE -Triebköpfe;BR 401;AC;H0 ;?;Digital;Märklin
+3751;Elektrische Lokomotive;Elektrische Lokomotive;Serie 460 der SBB;AC;H0 ;?;Digital;Märklin
+39604;Elektrolokomotive;Elektrolokomotive;460 SBB;AC;H0 ;V;Analog;Märklin
+39610;Elektrolokomotive Swiss Collection;Elektrolokomotive;BR 460 SBB/CFF/FFS;AC;H0 ;V;Analog;Märklin
+39601;Elektrolokomotive;Elektrolokomotive;460 SBB;AC;H0 ;V;Analog;Märklin
+34612;Elektrische Lokomotive MILCH;Elektrische Lokomotive;460 der SBB Milch;AC;H0 ;?;Digital;Märklin
+3453;Elektrische Lokomotive DANZAS;Elektrische Lokomotive;460 SBB;AC;H0 ;?;Digital;Märklin
+34633;Werbeloks Pepsi;Werbeloks Pepsi;Re 460 Pepsi;AC;H0 ;?;Digital;Märklin
+34611;Elektrische Lokomotive Miele;Elektrische Lokomotive;460 der SBB Miele;AC;H0 ;?;Digital;Märklin
+3451;Elektrische Lokomotive Kohlenschaufeln;Elektrische Lokomotive;460 SBB Heizerlok;AC;H0 ;?;Digital;Märklin
+34634;"SBB Werbeloks ""Space Dream""";"SBB Werbeloks ""Space Dream""";SBB Re 460;AC;H0 ;?;Digital;Märklin
+34632;SBB cargo RE 460 Werbelok;SBB cargo RE 460 Werbelok; RE 460;AC;H0 ;?;Digital;Märklin
+34637;Elektrische Lokomotive Swiss Collection;Elektrische Lokomotive;Serie 460 der SBB;AC;H0 ;?;Digital;Märklin
+34619;E-Lok Wir verbinden die Schweiz;E-Lok ;Re 460;AC;H0 ;?;Digital;Märklin
+34635;E-Lok;E-Lok;BR EL 18 2241 der NSB;AC;H0 ;?;Digital;Märklin
+30159;Elektische Lokomotive Krokodil MHI;Elektische Lokomotive;BR Ce 6/8 III der SBB;AC;H0 ;?;Analog;Märklin
+3352;Elektrische Lokomotive;Elektrische Lokomotive;Ce 6/8 der SBB;AC;H0 ;?;Analog;Märklin
+3556;Elektrische Lokomotive Krokodil;Elektrische Lokomotive;Ce 6/8;AC;H0 ;?;Analog;Märklin
+8356;E-Lok Hamo;E-Lok;Be 6/8 13302;AC;H0 ;?;Analog;Märklin
+3056;Elektrische Lokomotive Krokodil;Elektrische Lokomotive Krokodil;BR Ce 6/8 III der SBB;AC;H0 ;III;Analog;Märklin
+3650;E-Lok;E-Lok;BR Ae 6/6;AC;H0 ;?;Analog;Märklin
+3323;Elektrische Lokomotive SBB CFF FFS;Elektrische Lokomotive;Re 4/4 der SBB;AC;H0 ;?;Analog;Märklin
+3328;Elektrische Lokomotive Kreuzpfeil-Logo;Elektrische Lokomotive;BR Re 4/4 IV der SBB;AC;H0 ;?;Analog;Märklin
+3630;Elektrolokomotive ;Elektrolokomotive ;Baureihe 187.1;AC;H0 ;VI;MFX;Märklin
+8323;Elektrolokomotive Hamo;Elektrolokomotive;SBB Re 4/4 ;AC;H0 ;IV;Analog;Märklin
+37303;Elektrische Lokomotive Schweizer Persönlichkeiten;Elektrische Lokomotive;Serie 446 der SOB;AC;H0 ;?;Analog;Märklin
+37302;E-LOK;E-LOK;RE4/4;AC;H0 ;IV;Analog;Märklin
+34303;Elektrische Lokomotive Schweizer Persönlichkeiten;Elektrische Lokomotive;Serie 446 der SOB;AC;H0 ;?;Digital;Märklin
+3330;Elektrische Lokomotive Aufschrift Bahn Rail Ferrovia 2000;Elektrische Lokomotive;Re 4/4 SBB;AC;H0 ;?;Analog;Märklin
+34302;Elektrische Lokomotive Design Metallbaukasten;Elektrische Lokomotive;Re 446 der SBB;AC;H0 ;?;Digital;Märklin
+34301;Elektrische Lokomotive Aufschrift SÜDOSTBAHN;Elektrische Lokomotive;Re 446 der SOB;AC;H0 ;?;Digital;Märklin
+34305;"E-Lok Swisscom ""Unterwegs zu neuen Horizonten""";E-Lok;RE 446 SBB Swisscom;AC;H0 ;?;Digital;Märklin
+3384;Diesellokomotive;Diesellokomotive;Am 4/4 der SBB;AC;H0 ;?;Digital;Märklin
+3184;Dieselhydraulische Lokomotive;Dieselhydraulische Lokomotive;Am 4/4 der SBB;AC;H0 ;?;Analog;Märklin
+3014;Elektrische Lokomotive;Elektrische Lokomotive;Re 4/4 der SBB;AC;H0 ;?;Analog;Märklin
+3350;Elektrische Lokomotive Städtewappen ;Elektrische Lokomotive;AE 6/6 SBB;AC;H0 ;?;Analog;Märklin
+138;E-Lok;E-Lok;Ae 4/7 der SBB;AC;H0 ;?;Digital;Hag
+139;E-Lok;E-Lok;Ae 4/7;AC;H0 ;?;Digital;Hag
+143;Elektrolok  VHB;Elektrolok ;Re 4/4;AC;H0 ;?;Digital;Hag
+167;E-Lok SBB;E-Lok;Re 4/4 II SBB;AC;H0 ;?;Digital;Hag
+172;E-Lok ;Swissexpress ;Re 4/4;AC;H0 ;?;Digital;Hag
+173;Locomotive Swiss Express - (SBB-CFF);Locomotive ;Re 4/4II;AC;H0 ;?;Analog;Hag
+217;Universal-Elektrolokomotiven der SBB;Universal-Elektrolokomotiven;Re 4/4 II TEE;AC;H0 ;?;Analog;Hag
+212;E-Lok Jubiläumslok 150 Jahre;E-Lok;Re 460 ROT;AC;H0 ;?;Digital;Hag
+176;Locomotive MthB ;Locomotive;Re 4/4II MTHB;AC;H0 ;?;Analog;Hag
+195;Lokomotive Bern;Lokomotive ;Re 4/4 EBT;AC;H0 ;?;Analog;Hag
+214;Lokomotive 11372 grün;Lokomotive ;Re 4/4 GRÜN;AC;H0 ;?;Analog;Hag
+194;Lokomotive Bern;Lokomotive;Re 4/4 III;AC;H0 ;?;Analog;Hag
+165;E-Lok;E-Lok;Re 4/4 II SBB ROT;AC;H0 ;?;Analog;Hag
+152;E-Lok Altdorf;E-Lok;Ae 6/6 GRÜN;AC;H0 ;?;Analog;Hag
+153;E-Lok ;E-Lok;BDe 4/4 SBB grün;AC;H0 ;?;Analog;Hag
+154;E-Lok altes Logo;E-Lok;SBB BDe 4/4, grün;AC;H0 ;?;Analog;Hag
+150;SBB Triebwagen;SBB Triebwagen;RBe 4/4 GRÜN;AC;H0 ;?;Analog;Hag
+128;Elektrolokomotive St. Gallen;Elektrolokomotive ;AE 6/6 SBB ROT;AC;H0 ;?;Analog;Hag
+126;E-Lok Appenzell Innerrhoden;E-Lok;Ae 6/6 GRÜN;AC;H0 ;?;Digital;Hag
+94;E-Lok Winterthur ;E-Lok;Ae 6/6;AC;H0 ;?;Analog;Hag
+127;E-Lok Appenzell ;E-Lok;Ae6/6 GRÜN;AC;H0 ;?;Analog;Hag
+122;E-Lok Rotkreutz ;E-Lok;Re620;AC;H0 ;?;Analog;Hag
+124;Städtelok Altdorf;E-Lok;Ae 6/6;AC;H0 ;?;Analog;Hag
+231;E-Lok TEE;E-Lok;Re4/4 I TEE;AC;H0 ;?;Analog;Hag
+187;E-Lok Vögele 1;E-Lok;BT Re 4/4;AC;H0 ;?;Analog;Hag

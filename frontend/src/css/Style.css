@@ -1,0 +1,743 @@
+/* ===============================
+   Allgemeiner Container / Layout
+   =============================== */
+.suche-container {
+  max-width: none;
+  margin: 0;
+  padding: 1.5rem;
+  background-color: #111; /* dunkler Hintergrund */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  color: #fdfdfd;
+}
+
+.suche-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* ===============================
+   SearchField
+   =============================== */
+.search-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-field {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1 1 250px;
+}
+
+.search-field input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #fdfdfd;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.search-field input:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+.search-field button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.search-field button:hover {
+  background-color: #1976d2;
+}
+
+/* ===============================
+   Filter
+   =============================== */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #000000;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.filter-container > div {
+  flex: 1 1 150px;
+}
+
+.filter-container label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #fdfdfd;
+}
+
+.filter-container select {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #fdfdfd;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.filter-container select:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+/* ===============================
+   Lok- / Bestand-Karten Container
+   =============================== */
+.lok-bestand-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* sorgt dafür, dass bei kleinen Bildschirmen Karten umbrechen */
+  align-items: stretch; /* gleiche Höhe der Karten */
+  margin-top: 2rem; /* Abstand zur Suchseite */
+  justify-content: center; /* zentriert die Karten */
+}
+
+.lok-card,
+.bestand-card {
+  flex: 1 1 0; /* beide Karten gleich breit */
+  min-width: 300px;
+  max-width: 100%; /* damit keine Karte größer als Container wird */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #000000;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Überschriften */
+.lok-card h3,
+.bestand-card h3 {
+  margin-top: 0;
+}
+
+/* ===============================
+   Lok- / Bestand Container
+   =============================== */
+.lok-bestand-container {
+  display: flex;
+  flex-wrap: wrap; /* bei kleinen Bildschirmen umbrechen */
+  gap: 2rem;
+  justify-content: center; /* zentriert die Inhalte */
+  align-items: flex-start; /* gleiche Ausrichtung oben */
+  margin-top: 2rem;
+}
+
+/* ===============================
+   Lok-Card
+   =============================== */
+.lok-card {
+  flex: 1 1 300px; /* flexibel, mind. 300px */
+  max-width: 400px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #000000;
+  color: #fdfdfd;
+  border: 1px solid #555;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   Bestand-Card
+   =============================== */
+.bestand-card {
+  flex: 1 1 300px;
+  max-width: 600px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #000000;
+  color: #fdfdfd;
+  border: 1px solid #555;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   Tabelle Bestand
+   =============================== */
+.bestand-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bestand-tabelle th,
+.bestand-tabelle td {
+  border: 1px solid #555;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.bestand-tabelle th {
+  background-color: #222;
+}
+
+/* Buttons untereinander in der Tabelle */
+.bestand-tabelle td > button,
+.bestand-tabelle td > div > button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Modal Buttons vertikal */
+.modal-buttons,
+.modul-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Inputs im Modal */
+.modal input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #fdfdfd;
+}
+
+/* Modal Hintergrund */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #000000;
+  padding: 24px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+   Buttons spezifisch
+   =============================== */
+.button-eingang {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button-eingang:hover {
+  background-color: #43a047;
+}
+
+.button-transfer {
+  background-color: #2196f3;
+  color: white;
+}
+
+.button-transfer:hover {
+  background-color: #1976d2;
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  .lok-card,
+  .bestand-card {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #ddd;
+  }
+
+  .bestand-tabelle th {
+    background-color: #eaeaea;
+  }
+
+  .bestand-tabelle td {
+    color: #111;
+  }
+
+  .modal {
+    background-color: #fff;
+    color: #111;
+  }
+
+  .modal input {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #ccc;
+  }
+}
+/* Filter anwenden Button */
+.apply-filter-button {
+  display: block;
+  margin: 16px auto 0 auto;
+  width: 100%;
+  background-color: #2196f3;
+  color: #fdfdfd;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+  text-align: center;
+}
+
+.apply-filter-button:hover {
+  background-color: #2196f3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.apply-filter-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Markierung für aktive Filter */
+.filter-container select.active-filter {
+  border: 2px solid #2196f3;
+  background-color: #222;
+  color: #fdfdfd;
+  font-weight: bold;
+}
+/* Navbar Links fix und gleichmäßig verteilt */
+.nav-bar-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  position: fixed; /* bleibt immer oben */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 2rem;
+  z-index: 1000;
+
+  /* Hintergrund als halbtransparenten Balken */
+  background-color: rgba(40, 40, 40, 0.85); /* schwarz mit 70% Deckkraft */
+  backdrop-filter: blur(6px); /* leichte Unschärfe für den Inhalt darunter */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* optional, feine Linie */
+}
+
+.nav-bar-top a {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar-top a:hover {
+  color: #2196f3;
+}
+
+/* Platz für die fixierte Navbar im Header */
+.app-header {
+  position: relative;
+  padding-top: 70px; /* Höhe der Navbar + etwas Abstand */
+  text-align: center;
+  color: white;
+}
+
+/* ==========================================
+   LIGHT MODE (automatisch aktiv, wenn hell)
+   ========================================== */
+@media (prefers-color-scheme: light) {
+  .suche-container {
+    background-color: #f4f4f4;
+    color: #111;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  .filter-container {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+  }
+
+  .filter-container label {
+    color: #111;
+  }
+
+  .filter-container select {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #bbb;
+  }
+
+  .lok-card,
+  .bestand-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #111;
+  }
+
+  .bestand-table th {
+    background-color: #eaeaea;
+    color: #111;
+  }
+
+  .bestand-table td {
+    color: #111;
+  }
+
+  .search-field input {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #ccc;
+  }
+
+  .search-field input:focus {
+    border-color: #2196f3;
+  }
+
+  .modal {
+    background: #ffffff;
+    color: #111;
+  }
+
+  .modal input {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #ccc;
+  }
+
+  .nav-bar-top a {
+    color: #111;
+  }
+
+  .app-header nav a:hover {
+    color: #2196f3;
+  }
+
+  /* Buttons leicht heller gestalten */
+  .apply-filter-button {
+    background-color: #2196f3;
+    color: white;
+  }
+
+  .button-eingang {
+    background-color: #4caf50;
+  }
+
+  .button-transfer {
+    background-color: #2196f3;
+  }
+
+  @media (prefers-color-scheme: light) {
+    .nav-bar-top {
+      background-color: rgba(255, 255, 255, 0.9); /* heller Balken */
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-bar-top a {
+      color: #111; /* dunkle Schrift im Light Mode */
+    }
+
+    .hersteller-container {
+      background-color: #f4f4f4; /* heller Hintergrund passend zum Light Mode */
+    }
+
+    .hersteller-card {
+      background-color: #ffffff; /* Karten heller, besser sichtbar */
+    }
+
+    .hersteller-card span {
+      color: #111; /* Name gut lesbar */
+    }
+    .app-header h1 {
+      color: #111; /* Titel sichtbar in Light Mode */
+    }
+
+    .hersteller-container {
+      background-color: #f4f4f4; /* heller Container */
+    }
+
+    .hersteller-card {
+      background-color: #ffffff; /* helle Karten */
+    }
+
+    .hersteller-card span {
+      color: #111; /* Name gut lesbar */
+    }
+  }
+}
+
+/* Container für das Hersteller-Grid */
+.hersteller-container {
+  width: 100%;
+  padding: 16px;
+  background-color: #111; /* Dunkler Hintergrund passend zu deinem Theme */
+  box-sizing: border-box;
+}
+
+/* Flexbox für das Grid */
+.hersteller-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Karten zentrieren */
+  flex-wrap: wrap; /* Umbruch bei zu wenig Platz */
+}
+
+/* Einzelne Karte */
+.hersteller-card {
+  flex: 1 1 160px; /* flexible Breite, min 160px */
+  max-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  text-align: center;
+}
+
+.hersteller-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  transition: transform 0.2s;
+}
+
+.hersteller-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  background-color: #222;
+}
+
+.hersteller-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Herstellername */
+.hersteller-card span {
+  color: #fdfdfd;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.lok-form {
+  max-width: 500px; /* kompakter */
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #111111; /* dunkler Hintergrund */
+  color: #ffffff; /* Schrift hell */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+.lok-form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #f0f0f0;
+}
+
+.lok-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Spalten für kürzere Höhe */
+  gap: 1rem;
+}
+
+.lok-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.lok-label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.lok-input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #222222;
+  color: #ffffff;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.lok-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.lok-form-button {
+  grid-column: span 2; /* Button über beide Spalten */
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.lok-message {
+  color: #00cc66; /* schönes Grün */
+  font-size: 1.3rem; /* größerer Text */
+  font-weight: bold; /* dicker Text */
+  margin-top: 1rem;
+  text-align: center; /* zentriert, wirkt sauberer */
+}
+
+.gesamt-bestand {
+  font-size: 1.5rem;
+  font-weight: "bold";
+  color: #00cc66;
+}
+
+.lok-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start; /* linksbündig oder center */
+}
+
+.lok-card {
+  flex: 0 0 calc(20% - 1rem); /* 5 Karten nebeneinander */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fdfdfd;
+  padding: 1rem;
+  box-sizing: border-box; /* wichtig, damit Padding die Breite nicht überschreitet */
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown label {
+  margin-bottom: 0.25rem;
+  color: #fdfdfd;
+}
+
+.dropdown select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #fdfdfd;
+}
+
+/* ========================================
+   Lok-Card im Dupli / Bearbeiten-Modus
+   ======================================== */
+.lok-container-dupli {
+  display: flex;
+  justify-content: center; /* horizontal mittig */
+  align-items: center; /* vertikal mittig */
+  min-height: 60vh; /* optisch mittig auf der Seite */
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.lok-container-dupli .lok-card {
+  flex: 0 1 420px;
+  max-width: 90%;
+  border-radius: 12px;
+  border: 1px solid #555;
+  background-color: #000;
+  color: #fdfdfd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lok-container-dupli .lok-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Für kleine Bildschirme */
+@media (max-width: 600px) {
+  .lok-container-dupli {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .lok-container-dupli .lok-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* ===============================
+   LokDetails im Edit-/Dupli-Modus
+   =============================== */
+.lok-container.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.lok-container.edit .lok-card {
+  flex: 0 1 420px;
+  max-width: 90%;
+  border-radius: 12px;
+  border: 1px solid #555;
+  background-color: #000;
+  color: #fdfdfd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lok-container.edit .lok-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
