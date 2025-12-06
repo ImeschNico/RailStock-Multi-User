@@ -4,7 +4,7 @@ import React, { Children, createContext, useState } from "react";
 export const AuthContext = createContext();
 
 //Provider Context
-export const AuthProvider = ({ Children }) => {
+export const AuthProvider = ({ children }) => {
   // ==========================================
   // STATE
   // ==========================================
@@ -86,5 +86,5 @@ export const AuthProvider = ({ Children }) => {
   // ==========================================
   // PROVIDER
   // ==========================================
-  return <AuthContext.Provider value={value}>{Children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
