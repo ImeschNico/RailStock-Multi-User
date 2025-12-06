@@ -12,7 +12,7 @@ export const Home = () => {
     <div>
       <p>Teste hier den AuthContext:</p>
       {/* Test Component */}
-      <AuthTest /> {/* ← NEU! */}
+      <AuthTest />
     </div>
 
     // <div>
