@@ -11,6 +11,7 @@ const Navigation = () => {
       <Link to="/">Home</Link>
       <Link to="/suche">Suche</Link>
       <Link to="/lagerplatz">Lagerplatz</Link>
+      <Link to="/login">Login</Link>
       <Link to="/admin">Admin</Link>
 
       {/* User-Anzeige */}

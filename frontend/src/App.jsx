@@ -7,6 +7,7 @@ import { Suche } from "./Pages/Suche";
 import { Lagerplatz } from "./Pages/Lagerplatz";
 import { HerstellerBestand } from "./components/herstellerBestand";
 import { Admin } from "./Pages/Admin";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/suche" element={<Suche />} />
         <Route path="/lagerplatz" element={<Lagerplatz />} />
         <Route path="/loks/filter" element={<HerstellerBestand />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
       </Route>
     </Routes>
