@@ -14,11 +14,11 @@ import org.springframework.stereotype.Service;
  * Analogie: Die Zentrale, die nachschaut ob ein User existiert
  */
 @Service
-public class AppUserDetails implements UserDetailsService {
+public class AppUserDetailsService implements UserDetailsService {
 
     private final AppUserRepository appUserRepository;
 
-    public AppUserDetails(AppUserRepository appUserRepository) {
+    public AppUserDetailsService(AppUserRepository appUserRepository) {
         this.appUserRepository = appUserRepository;
     }
 
