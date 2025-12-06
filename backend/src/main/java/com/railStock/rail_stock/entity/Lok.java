@@ -89,9 +89,6 @@ public class Lok {
     private Hersteller hersteller;
 
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "created_by_user_id")
-    private AppUser createdBy;
 
     //----Konstruktoren----
     /**
@@ -110,9 +107,8 @@ public class Lok {
      * @param spur        Spurweite
      * @param epoche      Epoche
      * @param betriebsart Betriebsart
-     * @param createdBy
      */
-    public Lok(String artNumber, String bezeichnung, String typ, String modell, String stromart, String spur, String epoche, String betriebsart, AppUser createdBy) {
+    public Lok(String artNumber, String bezeichnung, String typ, String modell, String stromart, String spur, String epoche, String betriebsart) {
         this.artNumber = artNumber;
         this.bezeichnung = bezeichnung;
         this.typ = typ;

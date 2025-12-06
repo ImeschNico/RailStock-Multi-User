@@ -1,7 +1,5 @@
 package com.railStock.rail_stock.dto;
 
-import io.swagger.v3.oas.annotations.media.Schema;
-
 /**
  * Data Transfer Object (DTO) zur Repräsentation der Formulardaten einer Lokomotive.
  * <p>
