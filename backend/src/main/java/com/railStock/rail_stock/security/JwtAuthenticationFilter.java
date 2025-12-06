@@ -2,7 +2,6 @@ package com.railStock.rail_stock.security;
 
 
 import com.railStock.rail_stock.service.JwtService;
-import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -33,7 +32,7 @@ import java.io.IOException;
  * - Öffnet die Tür (oder nicht)
  */
 @Component
-public class JwtAuthenticatonFilter extends OncePerRequestFilter {
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
@@ -43,7 +42,7 @@ public class JwtAuthenticatonFilter extends OncePerRequestFilter {
      * - JwtService (zum Token validieren)
      * - UserDetailsService (zum User laden)
      */
-    public JwtAuthenticatonFilter(JwtService jwtService, UserDetailsService userDetailsService) {
+    public JwtAuthenticationFilter(JwtService jwtService, UserDetailsService userDetailsService) {
         this.jwtService = jwtService;
         this.userDetailsService = userDetailsService;
     }

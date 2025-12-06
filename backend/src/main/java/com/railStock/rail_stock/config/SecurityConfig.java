@@ -1,6 +1,6 @@
 package com.railStock.rail_stock.config;
 
-import com.railStock.rail_stock.security.JwtAuthenticatonFilter;
+import com.railStock.rail_stock.security.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,10 +27,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity // <- Spring: "Erlaube @PreAuthorize auf Methoden"
 public class SecurityConfig {
 
-    private final JwtAuthenticatonFilter jwtAuthenticatonFilter;
+    private final JwtAuthenticationFilter jwtAuthenticatonFilter;
 
     //Constructor Injection
-    public SecurityConfig(final JwtAuthenticatonFilter jwtAuthenticatonFilter) {
+    public SecurityConfig(final JwtAuthenticationFilter jwtAuthenticatonFilter) {
         this.jwtAuthenticatonFilter = jwtAuthenticatonFilter;
     }
 
