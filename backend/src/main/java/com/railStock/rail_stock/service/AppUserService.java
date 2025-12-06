@@ -48,12 +48,12 @@ public class AppUserService {
      * 1. Username muss unique sein
      * 2. Email muss unique sein
      * 3. Password wird gehashed gespeichert
-     * 4. Default Role ist PLAYER
+     * 4. Default Role ist User
      *
      * @param username Der gewünschte Username
      * @param email Die Email-Adresse
      * @param rawPassword Das Klartext-Passwort (wird gehashed)
-     * @param role Die Rolle (ADMIN oder PLAYER)
+     * @param role Die Rolle (ADMIN oder USER)
      * @return Der gespeicherte User mit generierter ID
      * @throws IllegalArgumentException wenn Username/Email
     bereits existiert
