@@ -7,7 +7,7 @@ import { Suche } from "./Pages/Suche";
 import { Lagerplatz } from "./Pages/Lagerplatz";
 import { HerstellerBestand } from "./components/herstellerBestand";
 import { Admin } from "./Pages/Admin";
-import Login from "./pages/Login";
+import Login from "./Pages/Login";
 
 function App() {
   return (
