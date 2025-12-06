@@ -2,39 +2,53 @@ package com.railStock.rail_stock.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 /**
- * Security-Konfiguration für die Applikation.
+ * Spring Security Konfiguration - Der "Bauplan" für unser Sicherheitssystem
  *
- * Diese Klasse definiert:
- * - Wie Passwörter gehashed werden (BCrypt)
- * - Welche URLs geschützt sind
- * - CORS und CSRF Einstellungen
+ * Analogie: Das ist wie der Sicherheitsplan eines Bürogebäudes, der festlegt:
+ * - Welche Bereiche sind öffentlich? (Empfangshalle)
+ * - Welche Bereiche brauchen einen Ausweis? (Büros)
+ * - Wo werden die Ausweis-Lesegeräte installiert? (JWT Filter)
  */
 @Configuration  // Spring scannt diese Klasse beim Start
 @EnableWebSecurity  // Aktiviert Spring Security
+@EnableMethodSecurity // <- Spring: "Erlaube @PreAuthorize auf Methoden"
 public class SecurityConfig {
 
     /**
-     * PasswordEncoder Bean für BCrypt Hashing.
+     * Bean #1: Password Encoder
      *
-     * Work Factor 12 bedeutet:
-     * - 2^12 = 4096 Hash-Iterationen
-     * - Ca. 250ms pro Passwort auf modernen CPUs
-     * - Guter Kompromiss zwischen Sicherheit und Performance
-     *
-     * @return BCryptPasswordEncoder mit Stärke 12
+     * - Niemand kann das Original-Passwort lesen
+     * - BCrypt ist der Verschlüsselungsalgorithmus (sehr sicher!)
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
     //Work Factor: 10-12 ist Standard 14+ für hochsensible Daten
         return new BCryptPasswordEncoder(12);
     }
+
+    /**
+     * Bean #2: Authentication Manager
+     *
+     * - Prüft ob Username + Passwort stimmen
+     * - Gibt bei Erfolg einen JWT Token aus
+     */
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+      return config.getAuthenticationManager();
+    }
+
+
     /**
      * Security Filter Chain Configuration.
      *
@@ -46,17 +60,34 @@ public class SecurityConfig {
         http
         // CSRF für REST APIs deaktivieren
         // (verwenden JWT stattdessen)
+                // SCHRITT 1: CSRF deaktivieren
                 .csrf(csrf -> csrf.disable())
 
+                // SCHRITT 2: CORS konfigurieren
+                .cors(cors -> cors.configure(http))
+
+                // SCHRITT 3: Authorization Rules
                 //Request Authorization Rules
                 .authorizeHttpRequests(auth -> auth
-                        //Auch Endpoints müüsen öffentlich sein
-                        .requestMatchers("/api/auth/**").permitAll()
-                        //Swagger UI für API Dokumentation
-                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll()
-                        //Temporär Alle Request erlauben
-                        .anyRequest().permitAll()
-                    );
+                        // 🌍 ÖFFENTLICHE Bereiche (wie die Empfangshalle)
+                        .requestMatchers(
+                                "/api/auth/**",      // Login & Register - jeder darf rein
+                                "/swagger-ui/**",    // API Dokumentation - öffentlich
+                                "/v3/api-docs/**"    // OpenAPI Docs - öffentlich
+                        ).permitAll()
+
+                        // 🔒 ALLE anderen Endpoints benötigen
+                        // einen gültigen Ausweis (JWT)
+                        .anyRequest().authenticated()
+                )
+
+                // SCHRITT 4: Session Management auf STATELESS setzen
+                // Warum? Wir benutzen JWT, nicht Sessions/Cookies
+                // Analogie: Keine Besucherliste führen, nur Ausweise prüfen
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                );
+
         return http.build();
     }
 }
