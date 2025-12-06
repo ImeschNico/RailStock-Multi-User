@@ -1,11 +1,14 @@
 package com.railStock.rail_stock.controller;
 
 
+import com.railStock.rail_stock.dto.LoginRequestDTO;
+import com.railStock.rail_stock.dto.LoginResponseDTO;
 import com.railStock.rail_stock.dto.RegisterRequestDTO;
 import com.railStock.rail_stock.dto.RegisterResponseDTO;
 import com.railStock.rail_stock.entity.AppUser;
 import com.railStock.rail_stock.entity.Role;
 import com.railStock.rail_stock.service.AppUserService;
+import com.railStock.rail_stock.service.JwtService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * REST Controller für Authentication und Registration.
@@ -32,10 +36,13 @@ import java.util.Map;
 public class AuthController {
 
     private final AppUserService appUserService;
+    private final JwtService jwtService;
+
 
     // Constructor Injection
-    public AuthController(AppUserService appUserService) {
+    public AuthController(AppUserService appUserService, JwtService jwtService) {
         this.appUserService = appUserService;
+        this.jwtService = jwtService;
     }
 
     /**
@@ -147,6 +154,91 @@ public class AuthController {
         response.put("available", available);
         response.put("message", available ? "Email ist verfügbar":"Email ist bereits vergeben");
         return ResponseEntity.ok(response);
+    }
+
+    /**
+     * POST /api/auth/login
+     *
+     * Authentifiziert einen User und gibt JWT Token zurück.
+     *
+     * Request Body Example:
+     * {
+     *   "usernameOrEmail": "maxmuster",
+     *   "password": "test123"
+     * }
+     *
+     * Success Response (200):
+     * {
+     *   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+     *   "tokenType": "Bearer",
+     *   "userId": 1,
+     *   "username": "maxmuster",
+     *   "email": "max@example.com",
+     *   "role": "PLAYER",
+     *   "expiresIn": 86400000
+     * }
+     *
+     * Error Response (401):
+     * {
+     *   "error": "Ungültige Anmeldedaten"
+     * }
+     */
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequestDTO request){
+        try{
+            //1.User finden
+            Optional<AppUser> userOpt;
+
+            //prüfen ob email oder Username
+            if (request.getUsernameOrEmail().contains("@")){
+                //Hat @ -> Email
+                userOpt = appUserService.findByEmail(request.getUsernameOrEmail());
+            }
+            else {
+                //kein @ -> Isername
+                userOpt = appUserService.findByUsername(request.getUsernameOrEmail());
+            }
+
+            //User exisitert nicht
+            if (userOpt.isEmpty()){
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error" , "Ungültige Anmelde Daten"));
+            }
+
+            AppUser user = userOpt.get();
+            //Passwort prüfen authenticateUser
+            Optional<AppUser> authenticatedUser = appUserService.authenticateUser(user.getUsername(), user.getPassword());
+
+            if (authenticatedUser.isEmpty()){
+                //Passwort falsch
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error" , "Login Failed"));
+            }
+
+            //3. JWT Token generieren
+            String token = jwtService.generateToken(
+                    user.getUsername(),
+                    user.getRole().name()
+            );
+
+            //4.Response DTO erstellen
+            LoginResponseDTO response = new LoginResponseDTO(
+                    token,
+                    user.getId(),
+                    user.getUsername(),
+                    user.getEmail(),
+                    user.getRole().name(),
+                    86400000L //24Std in ms
+            );
+
+            //5.Succsess Response
+            return ResponseEntity.ok(response);
+        }
+        catch (Exception e){
+            //Unerwartete Feheler
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error",
+                            "Ein Fehler ist aufgetreten: " + e.getMessage()));
+        }
     }
 
     /**
