@@ -1,5 +1,6 @@
 package com.railStock.rail_stock.config;
 
+import com.railStock.rail_stock.security.JwtAuthenticatonFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,6 +12,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * Spring Security Konfiguration - Der "Bauplan" für unser Sicherheitssystem
@@ -24,6 +26,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity  // Aktiviert Spring Security
 @EnableMethodSecurity // <- Spring: "Erlaube @PreAuthorize auf Methoden"
 public class SecurityConfig {
+
+    private final JwtAuthenticatonFilter jwtAuthenticatonFilter;
+
+    //Constructor Injection
+    public SecurityConfig(final JwtAuthenticatonFilter jwtAuthenticatonFilter) {
+        this.jwtAuthenticatonFilter = jwtAuthenticatonFilter;
+    }
 
     /**
      * Bean #1: Password Encoder
@@ -86,7 +95,10 @@ public class SecurityConfig {
                 // Analogie: Keine Besucherliste führen, nur Ausweise prüfen
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                );
+                )
+                // Der Filter wird VOR dem
+                // UsernamePasswordAuthenticationFilter ausgeführt
+                .addFilterBefore(jwtAuthenticatonFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
