@@ -184,19 +184,19 @@ public class AuthController {
      * }
      */
     @PostMapping("/login")
-    public ResponseEntity<?> login(@Valid @RequestBody LoginRequestDTO request){
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequestDTO requestDTO){
         try{
             //1.User finden
             Optional<AppUser> userOpt;
 
             //prüfen ob email oder Username
-            if (request.getUsernameOrEmail().contains("@")){
+            if (requestDTO.getUsernameOrEmail().contains("@")){
                 //Hat @ -> Email
-                userOpt = appUserService.findByEmail(request.getUsernameOrEmail());
+                userOpt = appUserService.findByEmail(requestDTO.getUsernameOrEmail());
             }
             else {
                 //kein @ -> Isername
-                userOpt = appUserService.findByUsername(request.getUsernameOrEmail());
+                userOpt = appUserService.findByUsername(requestDTO.getUsernameOrEmail());
             }
 
             //User exisitert nicht
@@ -206,7 +206,8 @@ public class AuthController {
 
             AppUser user = userOpt.get();
             //Passwort prüfen authenticateUser
-            Optional<AppUser> authenticatedUser = appUserService.authenticateUser(user.getUsername(), user.getPassword());
+            Optional<AppUser> authenticatedUser = appUserService
+                    .authenticateUser(user.getUsername(), requestDTO.getPassword());
 
             if (authenticatedUser.isEmpty()){
                 //Passwort falsch
