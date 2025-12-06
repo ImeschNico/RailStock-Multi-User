@@ -6,6 +6,7 @@ import com.railStock.rail_stock.entity.Lagerplatz;
 import com.railStock.rail_stock.mapper.LagerplatzMapper;
 import com.railStock.rail_stock.service.LagerplatzService;
 import io.swagger.v3.oas.annotations.Operation;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -55,6 +56,7 @@ public class LagerplatzController {
      */
     @Operation(summary = "Filtert Lagerplätze nach Regal und/oder Tablar")
     @GetMapping("/filter")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<LagerplatzDTO> getLagerplaetze(
             @RequestParam(required = false) String regal,
             @RequestParam(required = false) String tablar
@@ -75,6 +77,7 @@ public class LagerplatzController {
      */
     @Operation(summary = "Erstellt einen neuen Lagerplatz")
     @PostMapping("/erstellen")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public LagerplatzDTO erstellenLagerplatz(@RequestBody LagerplatzDTO dto){
         Lagerplatz lp = lagerplatzService.create(dto);
         return LagerplatzMapper.toDTO(lp);

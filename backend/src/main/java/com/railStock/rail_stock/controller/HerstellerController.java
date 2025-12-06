@@ -6,6 +6,7 @@ import com.railStock.rail_stock.entity.Hersteller;
 import com.railStock.rail_stock.mapper.HerstellerMapper;
 import com.railStock.rail_stock.service.BestandService;
 import com.railStock.rail_stock.service.HerstellerSerivce;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -60,6 +61,7 @@ public class HerstellerController {
      * @return Liste aller Hersteller als {@link HerstellerDTO}
      */
     @GetMapping("/api/hersteller")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<HerstellerDTO> getAllHersteller() {
         List<Hersteller> herstellerList = herstellerSerivce.findAllHerstellers();
         return herstellerList.stream().map(HerstellerMapper::toDTO)

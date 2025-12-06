@@ -7,6 +7,7 @@ import com.railStock.rail_stock.entity.Lok;
 import com.railStock.rail_stock.service.LokService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
@@ -61,6 +62,7 @@ public class LokController {
      */
     @Operation(summary = "Filtert Lokomotiven nach verschiedenen Kriterien")
     @GetMapping("/filter")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<LokDTO> filterLoks(
             @RequestParam(required = false) String artNumber,
             @RequestParam(required = false) String bezeichnung,
@@ -81,6 +83,7 @@ public class LokController {
      * @return neu erstelllte Lok anahnd der Eingaben
      */
     @PostMapping("/admin/neu")
+    @PreAuthorize("hasRole('ADMIN')")
     public LokDTO createLok(@RequestBody LokFormDTO dto){
         return lokService.createLok(dto);
     }

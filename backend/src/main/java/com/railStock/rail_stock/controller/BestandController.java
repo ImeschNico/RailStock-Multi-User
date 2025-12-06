@@ -12,6 +12,7 @@ import com.railStock.rail_stock.mapper.BestandMapper;
 import com.railStock.rail_stock.service.BestandService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -54,6 +55,7 @@ public class BestandController {
      * @return Liste von {@link BestandDTO}-Objekten mit Bestandsinformationen
      */
     @GetMapping("/lok/{artNumber}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<BestandDTO> getBestand(@PathVariable String artNumber) {
         return bestandService.findByArtNumberIncludingEmpty(artNumber);
     }
@@ -64,6 +66,7 @@ public class BestandController {
      * @return Liste des Bestandes nach Hersteller
      */
     @GetMapping("/hersteller/{herstellerName}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<BestandDTO> findBestandByHersteller(@PathVariable String herstellerName) {
         return bestandService.getBestandByHersteller(herstellerName);
     }
@@ -75,6 +78,7 @@ public class BestandController {
      * @return das aktualisierte {@link BestandDTO}-Objekt
      */
     @PutMapping("/updateBestand")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public BestandDTO updateBestand(@RequestBody BestandFormDTO form) {
         Bestand updated = bestandService.updateBestand(form);
         return BestandMapper.toDTO(updated);
@@ -88,6 +92,7 @@ public class BestandController {
      * @return Liste von {@link GesamtBestandDTO}-Objekten mit aggregierten Bestandsdaten
      */
     @GetMapping("/alleBestaende")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<GesamtBestandDTO> getGesamtBestand() {
         return bestandService.getGesamtBestand();
     }
@@ -100,6 +105,7 @@ public class BestandController {
      * @return Liste von {@link BestandDTO}-Objekten am angegebenen Lagerplatz
      */
     @GetMapping("/lagerplatz")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public List<BestandDTO> getAllBestand(@PathVariable String regal, String tablar) {
         return bestandService.findByLagerplatz(regal, tablar).stream().map(BestandMapper::toDTO).collect(Collectors.toList());
     }
@@ -115,6 +121,7 @@ public class BestandController {
      * @return das aktualisierte {@link BestandDTO}-Objekt nach dem Transfer
      */
     @PutMapping("/transferBestand")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public BestandDTO transferBestand(@RequestBody BestandTransferDTO form) {
         Bestand transferred = bestandService.transferBestand(
                 form.getArtNumber(),
@@ -132,6 +139,7 @@ public class BestandController {
      * @return Alle Bestände als eine Nummer(Integer)
      */
     @GetMapping("/alle")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<Integer> getAllBestandAsInt(){
         return ResponseEntity.ok(bestandService.getAllBestandAsInt());
     }
