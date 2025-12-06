@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Button } from "./button";
 import { Link } from "react-router-dom";
-import { fetchBestandByArtNumber, fetchUpdateBestand } from "../data/api";
-import { fetchTransferBestand } from "../data/api";
+import {
+  getBestandByArtNumber,
+  updateBestand,
+} from "../services/bestand-service";
+import { transferBestand } from "../services/bestand-service";
 import "../css/Style.css";
 
 export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
@@ -23,14 +26,14 @@ export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
   const saveChanges = async () => {
     if (modalType === "eingang") {
       try {
-        const updatedItem = await fetchUpdateBestand({
+        const updatedItem = await updateBestand({
           artNumber: currentItem.lok.artNumber,
           regal: currentItem.lagerplatz.regal,
           tablar: currentItem.lagerplatz.tablar,
           menge: Number(newMenge),
         });
 
-        const refreshed = await fetchBestandByArtNumber(
+        const refreshed = await getBestandByArtNumber(
           currentItem.lok.artNumber
         );
         setBestand(refreshed);
@@ -42,7 +45,7 @@ export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
     }
     if (modalType === "transferieren") {
       try {
-        const updatedItem = await fetchTransferBestand({
+        const updatedItem = await transferBestand({
           artNumber: currentItem.lok.artNumber,
           vonRegal: currentItem.lagerplatz.regal,
           vonTablar: currentItem.lagerplatz.tablar,
@@ -51,7 +54,7 @@ export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
           menge: Number(newMenge),
         });
 
-        const refreshed = await fetchBestandByArtNumber(
+        const refreshed = await getBestandByArtNumber(
           currentItem.lok.artNumber
         );
         setBestand(refreshed);

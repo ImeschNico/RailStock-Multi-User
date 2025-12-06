@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchHersteller } from "../data/api";
+import { getHersteller } from "../services/hersteller-service";
 import maerklinLogo from "../assets/bild_maerklin.png";
 import bemoLogo from "../assets/bild_bemo.png";
 import hagLogo from "../assets/bild_hag.png";
@@ -24,7 +24,7 @@ export const Hersteller = ({ onSelectedHersteller }) => {
   useEffect(() => {
     const loadHersteller = async () => {
       try {
-        const data = await fetchHersteller();
+        const data = await getHersteller();
         setHersteller(data);
       } catch (error) {
         console.error("Fehler beim Laden der Hersteller", error);

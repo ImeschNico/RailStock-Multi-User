@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createLagerplatz } from "../data/api";
+import { createLagerplatz } from "../services/lagerplatz-service";
 import { Button } from "./button";
 import { Lagerplatz } from "../Pages/Lagerplatz";
 

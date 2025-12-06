@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchBestandByArtNumber } from "../data/api";
+import { getBestandByArtNumber } from "../services/bestand-service";
 import { BestandTabelle } from "./BestandTabelle";
 import { LokDetails } from "./lokDetails";
 
@@ -14,7 +14,7 @@ export const BestandListe = ({ artNumber }) => {
     const fetchBestand = async () => {
       setLoading(true);
       try {
-        const data = await fetchBestandByArtNumber(artNumber);
+        const data = await getBestandByArtNumber(artNumber);
         setBestand(data);
       } catch (err) {
         console.error(err);

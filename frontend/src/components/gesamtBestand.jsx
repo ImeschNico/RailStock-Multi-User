@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchGesamtBestand } from "../data/api";
+import { fetchGesamtBestand } from "../services/api";
 
 export const GesamtBestand = () => {
   const [gesamt, setGesamt] = useState(0);

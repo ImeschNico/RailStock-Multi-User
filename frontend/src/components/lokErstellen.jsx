@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createLok } from "../data/api";
+import { createLok } from "../services/lok-serivce";
 import { Button } from "./button";
 
 export const LokErstellen = ({ initialData = {} }) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { fetchBestandByArtNumber, fetchBestandByHersteller } from "../data/api";
+import { getBestandByArtNumber } from "../services/bestand-service";
+import { getBestandByHersteller } from "../services/hersteller-service";
 import { useState, useEffect } from "react";
 import { Button } from "./button";
 import { BestandTabelle } from "./BestandTabelle";
@@ -11,7 +12,7 @@ export const HerstellerBestand = () => {
   const hersteller = params.get("hersteller");
   const [bestand, setBestand] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [Bearbeiten, setBearbeiten] = useState(false);
+  const [bearbeiten, setBearbeiten] = useState(false);
   const [lokBestand, setLokBestand] = useState([]);
   const [selectedLok, setSelectedLok] = useState(null);
 
@@ -21,7 +22,7 @@ export const HerstellerBestand = () => {
     const fetchBestand = async (herstellerName) => {
       setLoading(true);
       try {
-        const data = await fetchBestandByHersteller(herstellerName);
+        const data = await getBestandByHersteller(herstellerName);
         setBestand(data);
       } catch (err) {
         console.error(err);
@@ -41,7 +42,7 @@ export const HerstellerBestand = () => {
 
   const handleBearbeiten = async (lok) => {
     try {
-      const lokBestand = await fetchBestandByArtNumber(lok.artNumber);
+      const lokBestand = await getBestandByArtNumber(lok.artNumber);
       setLokBestand(lokBestand);
       setSelectedLok(lok);
     } catch (error) {

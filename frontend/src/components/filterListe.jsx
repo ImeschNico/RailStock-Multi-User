@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { Filter } from "./filter";
-import { fetchFilter, fetchSearchFilter } from "../data/api";
+import { filterLoks, searchLoks } from "../services/lok-serivce";
 import { SearchField } from "./SearchField";
 import { Button } from "./button";
 
 export const FilterListe = () => {
   const [loks, setLoks] = useState([]);
   const [error, setError] = useState("");
-
   const [artNumber, setArtNumber] = useState("");
+  const [modell, setModell] = useState("");
   const [hersteller, setHersteller] = useState("");
   const [bezeichnung, setBezeichnung] = useState("");
 
@@ -20,7 +20,7 @@ export const FilterListe = () => {
         modell,
         herstellerName: hersteller,
       };
-      const data = await fetchSearchFilter(params);
+      const data = await searchLoks(params);
       setLoks(data);
     } catch (err) {
       console.error(err);
@@ -44,7 +44,7 @@ export const FilterListe = () => {
 
   const handleFilterChange = async (filters) => {
     try {
-      const data = await fetchFilter(filters);
+      const data = await filterLoks(filters);
       setLoks(data);
     } catch (err) {
       console.error(err);

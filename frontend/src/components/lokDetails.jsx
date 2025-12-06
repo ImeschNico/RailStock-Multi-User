@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { fetchBestandByArtNumber } from "../data/api";
+import { getBestandByArtNumber } from "../services/bestand-service";
 
 export const LokDetails = ({ artNumber, onLoad, isEdit = false }) => {
   const [bestand, setBestand] = useState([]);
@@ -12,7 +12,7 @@ export const LokDetails = ({ artNumber, onLoad, isEdit = false }) => {
     const fetchBestand = async () => {
       setLoading(true);
       try {
-        const data = await fetchBestandByArtNumber(artNumber);
+        const data = await getBestandByArtNumber(artNumber);
         setBestand(data);
         if (onLoad) onLoad(data.length > 0, data);
       } catch (err) {
