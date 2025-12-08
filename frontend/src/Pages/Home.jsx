@@ -3,8 +3,6 @@ import { SearchField } from "../components/SearchField";
 import { BestandListe } from "../components/bestandListe";
 import { GesamtBestand } from "../components/gesamtBestand";
 
-import AuthTest from "../components/auth-test";
-
 export const Home = () => {
   const [artNumber, setArtNumber] = useState("");
 

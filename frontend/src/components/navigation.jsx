@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
+import { Button } from "./button";
 
 const Navigation = () => {
   //AuthContext
-  const { user, isAuthenticated } = useContext(AuthContext);
+  const { user, isAuthenticated, logout } = useAuth();
 
   return (
     <nav className="nav-bar-top">
@@ -27,6 +27,12 @@ const Navigation = () => {
           }}
         >
           👤 {user.username} ({user.role})
+          <Button
+            onClick={logout}
+            style={{ padding: "5px 10px", cursor: "pointer" }}
+          >
+            Logout
+          </Button>
         </span>
       )}
     </nav>

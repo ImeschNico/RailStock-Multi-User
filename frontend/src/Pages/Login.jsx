@@ -2,10 +2,12 @@ import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/login-form";
 import { useState } from "react";
 import { login } from "../services/auth-service";
+import { useAuth } from "../contexts/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const { login } = useAuth();
 
   /**
    * Handler für Login (wird von LoginForm aufgerufen)
@@ -15,18 +17,11 @@ const Login = () => {
     setError("");
 
     try {
-      console.log("Login wird gestartet...");
-
-      //API Call zum Backend
-      const response = await login(
-        loginData.usernameOrEmail,
-        loginData.password
-      );
-
-      console.log("Login erfilgreich", response);
+      await login(loginData.usernameOrEmail, loginData.password);
+      console.log("Login erfolgreich");
 
       //Erfolg redirect zu Home
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       console.error("Login fehlgeschlagen", err);
       setError(

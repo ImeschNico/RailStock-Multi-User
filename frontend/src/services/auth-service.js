@@ -49,8 +49,21 @@ export const login = async (usernameOrEmail, password) => {
  * Löscht Token aus localStorage
  */
 export const logout = () => {
-  console.log("Logout Token gelöscht");
+  console.log("Logout - Daten gelöscht");
   localStorage.removeItem("authToken");
+  localStorage.removeItem("userData");
+};
+
+/**
+ * Hole User-Daten aus localStorage
+ * (Brauchen keinen Backend-Call, haben alles vom Login!)
+ */
+export const getUserData = () => {
+  const userDataString = localStorage.getItem("userData");
+  if (userDataString) {
+    return JSON.parse(userDataString);
+  }
+  return null;
 };
 
 /**

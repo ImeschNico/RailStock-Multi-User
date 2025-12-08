@@ -1,7 +1,12 @@
-import React, { Children, createContext, useState } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
+import {
+  login as apiLogin,
+  logout as apiLogout,
+  getUserData,
+} from "../services/auth-service";
 
 //export erstellen
-export const AuthContext = createContext();
+const AuthContext = createContext();
 
 //Provider Context
 export const AuthProvider = ({ children }) => {
@@ -10,11 +15,36 @@ export const AuthProvider = ({ children }) => {
   // ==========================================
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
 
   // ==========================================
   // FUNKTIONEN
   // ==========================================
+  /**
+   * Prüft ob User eingeloggt ist (Token + User-Daten in localStorage?)
+   */
+  const checkAuth = () => {
+    console.log("prüfe Auth Status...");
+
+    const storedToken = localStorage.getItem("authToken");
+    const storedUserData = getUserData();
+
+    if (storedToken && storedUserData) {
+      console.log("Token + USer Daten gefunden- User eingleoggt");
+      setToken(storedToken);
+      setUser(storedUserData);
+      setIsAuthenticated(true);
+    } else {
+      console.log("Kein Token oder USer Data gefudnen - User nicht eingeloggt");
+      setIsAuthenticated(false);
+    }
+    setIsLoading(false);
+  };
 
   /**
    * Login Funktion (aktuell noch Fake)
@@ -23,51 +53,42 @@ export const AuthProvider = ({ children }) => {
    * @param {string} usernameOrEmail - Username ODER Email
    * @param {string} password - Passwort
    */
-  const login = (usernameOrEmail, password) => {
-    setIsLoading(true);
+  const login = async (usernameOrEmail, password) => {
+    try {
+      console.log("AuthContext: Loging für: ", usernameOrEmail);
 
-    setTimeout(() => {
-      if (usernameOrEmail && password) {
-        // Fake User erstellen (simuliert Backend Response)
-        const fakeUser = {
-          id: 1,
-          username: usernameOrEmail.includes("@")
-            ? usernameOrEmail.split("@")[0] // Email → Username extrahieren
-            : usernameOrEmail, // Username direkt
-          email: usernameOrEmail.includes("@")
-            ? usernameOrEmail // Ist schon Email
-            : `${usernameOrEmail}@example.com`, // Username → Fake Email
-          role:
-            usernameOrEmail === "admin" || usernameOrEmail === "admin@quiz.com"
-              ? "ADMIN"
-              : "USER", // ← Backend verwendet "USER" nicht "PLAYER"!
-        };
-        const fakeToken = "fake-jwt-token-" + Date.now();
+      //API Call
+      const response = await apiLogin(usernameOrEmail, password);
 
-        setUser(fakeUser);
-        setToken(fakeToken);
-        console.log("✅ Login erfolgreich (FAKE):", fakeUser);
-      } else {
-        console.error("❌ Login fehlgeschlagen");
-      }
+      //Response enthält token userId username email role expires in
+      setToken(response.token);
+      setUser({
+        id: response.userId,
+        username: response.username,
+        email: response.email,
+        role: response.role,
+      });
+      setIsAuthenticated(true);
 
-      setIsLoading(false);
-    }, 1000);
+      console.log("AuthContext Login erfolgreich");
+      return response;
+    } catch (error) {
+      console.error("AuthContext Login fehlgeschlagen");
+      throw error;
+    }
   };
 
   /**
    * Logout Funktion
    */
   const logout = () => {
-    setUser(null);
+    console.log("AuthContext Logout");
+    apiLogout();
     setToken(null);
-    console.log("👋 User ausgeloggt");
+    setUser(null);
+    setIsAuthenticated(false);
+    window.location.href = "/";
   };
-
-  /**
-   * Ist ein User eingeloggt?
-   */
-  const isAuthenticated = user !== null;
 
   // ==========================================
   // CONTEXT VALUE
@@ -81,10 +102,37 @@ export const AuthProvider = ({ children }) => {
     //Funktionen
     login,
     logout,
+    checkAuth,
   };
 
   // ==========================================
   // PROVIDER
   // ==========================================
+  // Loading State während checkAuth läuft
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <h2>Lädt...</h2>
+      </div>
+    );
+  }
+
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error(
+      "useAuth muss innerhalb von AuthProvider verwendet werden!"
+    );
+  }
+  return context;
 };
