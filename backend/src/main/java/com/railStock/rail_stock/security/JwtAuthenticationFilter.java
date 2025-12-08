@@ -25,11 +25,6 @@ import java.io.IOException;
  * 3. Lädt den User aus der Datenbank
  * 4. Setzt den User in den SecurityContext (Spring weiss jetzt: User ist eingeloggt!)
  *
- * Analogie: Das Ausweis-Lesegerät am Aufzug
- * - Liest den Ausweis (Token)
- * - Prüft ob er echt und gültig ist
- * - Identifiziert die Person
- * - Öffnet die Tür (oder nicht)
  */
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {

@@ -69,8 +69,8 @@ public class JwtService {
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(username)
-                .setIssuedAt(new Date(System.currentTimeMillis()
-                    + expirationTime))
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + expirationTime))
                 .signWith(getSigningKey(),
                         SignatureAlgorithm.HS256)
                 .compact();
@@ -92,7 +92,7 @@ public class JwtService {
      * @param token Der JWT Token
      * @return Die Rolle als String
      */
-    public String ectracRole(String token) {
+    public String extractRole(String token) {
         return extractClaim(token, claims -> claims.get("role", String.class));
     }
 
@@ -154,8 +154,8 @@ public class JwtService {
      * @return true wenn Token gültig
      */
     public Boolean validateToken(String token, String username) {
-        final String usernameToken = extractUsername(token);
-        return username.equals(usernameToken);
+        final String extractedUsername = extractUsername(token);
+        return (extractedUsername.equals(username) && !isTokenExpired(token));
     }
 
     /**
