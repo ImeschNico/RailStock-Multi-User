@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { fetchGesamtBestand } from "../services/api";
+import { getGesamtBestand } from "../services/bestand-service";
 
 export const GesamtBestand = () => {
   const [gesamt, setGesamt] = useState(0);
 
   useEffect(() => {
-    fetchGesamtBestand().then(setGesamt);
+    getGesamtBestand().then(setGesamt);
   }, []);
 
   return <div className="gesamt-bestand">Gesamter Bestand: {gesamt}</div>;

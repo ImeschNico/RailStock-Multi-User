@@ -33,8 +33,8 @@ const LoginForm = ({ onLogin }) => {
       return false;
     }
 
-    if (value < 3) {
-      setUsernameOrEmail("Mindestens 3 Zeichen erforderlich");
+    if (value.length < 3) {
+      setUsernameOrEmailError("Mindestens 3 Zeichen erforderlich");
       return false;
     }
 
@@ -51,7 +51,7 @@ const LoginForm = ({ onLogin }) => {
       return false;
     }
 
-    if (value < 6) {
+    if (value.length < 6) {
       setPasswordError("Password muss mindestens 6 Zeichen haben");
       return false;
     }
@@ -78,7 +78,7 @@ const LoginForm = ({ onLogin }) => {
   // ==========================================
   // HANDLER: Submit
   // ==========================================
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     //Alle Felder validieren
@@ -89,6 +89,7 @@ const LoginForm = ({ onLogin }) => {
     if (!usernameOrEmailOk || !passwordOk) {
       return;
     }
+    setIsLoading(true);
 
     //Login Daten an PArent übergeben
     const loginData = {
@@ -97,10 +98,16 @@ const LoginForm = ({ onLogin }) => {
     };
 
     //Parent Funktion aufrufen
-    if (onLogin) {
-      onLogin(loginData);
+    try {
+      if (onLogin) {
+        await onLogin(loginData);
+      }
+    } catch (error) {
+      //Error wird im Parent behandlet$
+      console.error("LoginForm Error", error);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   // ==========================================

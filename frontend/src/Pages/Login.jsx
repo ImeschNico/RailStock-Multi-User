@@ -1,14 +1,61 @@
+import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/login-form";
+import { useState } from "react";
+import { login } from "../services/auth-service";
 
 const Login = () => {
-  const handleLogin = (loginData) => {
-    console.log("Login Daten: ", loginData);
-    alert(`Login Versuch mit: ${loginData.usernameOrEmail}`);
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+
+  /**
+   * Handler für Login (wird von LoginForm aufgerufen)
+   * @param {Object} loginData - { usernameOrEmail, password }
+   */
+  const handleLogin = async (loginData) => {
+    setError("");
+
+    try {
+      console.log("Login wird gestartet...");
+
+      //API Call zum Backend
+      const response = await login(
+        loginData.usernameOrEmail,
+        loginData.password
+      );
+
+      console.log("Login erfilgreich", response);
+
+      //Erfolg redirect zu Home
+      navigate("/");
+    } catch (err) {
+      console.error("Login fehlgeschlagen", err);
+      setError(
+        err.message || "Login fehlgeschlagen. Bitte prüfe deine EIngaben"
+      );
+    }
   };
 
   return (
     <div className="auth-page">
       <div className="auth-container">
+        {/* Error Message wenn vorhanden */}
+        {error && (
+          <div
+            className="error-message"
+            style={{
+              color: "red",
+              padding: "10px",
+              backgroundColor: "#ffe6e6",
+              borderRadius: "4px",
+              marginBottom: "15px",
+              textAlign: "center",
+            }}
+          >
+            ❌ {error}
+          </div>
+        )}
+
+        {/* Bestehende LoginForm Component */}
         <LoginForm onLogin={handleLogin} />
 
         <div className="auth-links">

@@ -21,7 +21,7 @@ apiClient.interceptors.request.use(
     const token = localStorage.getItem("authToken");
 
     //Wenn Token existiert zur Auth hinzufügen
-    if (token) {
+    if (token && !config.url.endsWith("/auth/login")) {
       config.headers.Authorization = `Bearer ${token}`;
       console.log("Token wird mitgeschickt");
     }
