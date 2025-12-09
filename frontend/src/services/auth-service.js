@@ -90,9 +90,9 @@ export const getToken = () => {
  */
 export const register = async (userData) => {
   try {
-    console.log("Registrierung für: " + userData.email);
+    console.log("Registrierung für: " + userData.email || userData.username);
 
-    const response = await apiClient.post("/auth/register");
+    const response = await apiClient.post("/auth/register", userData);
 
     console.log("Registrierung erfolgreich");
     return response.userData;

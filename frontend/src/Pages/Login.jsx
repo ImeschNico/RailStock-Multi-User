@@ -31,7 +31,11 @@ const Login = () => {
 
         <div className="auth-links">
           <p>Noch kein Account?</p>
-          <p>Registrierung folgt später.</p>
+          <p>
+            <a href="/register" className="register">
+              Jetzt Registrieren
+            </a>
+          </p>
         </div>
       </div>
     </div>

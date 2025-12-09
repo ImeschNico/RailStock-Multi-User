@@ -13,6 +13,7 @@ import Forbidden from "./Pages/Forbidden";
 import { LokFilterPage } from "./Pages/LokFilterPage";
 import { useAuth } from "./contexts/AuthContext";
 import { Navigate } from "react-router-dom";
+import Register from "./Pages/Register";
 
 function App() {
   const { isAuthenticated } = useAuth();
@@ -29,6 +30,10 @@ function App() {
         <Route
           path="/login"
           element={isAuthenticated ? <Navigate to="/home" /> : <Login />}
+        />
+        <Route
+          path="/register"
+          element={isAuthenticated ? <Navigate to="/home" /> : <Register />}
         />
         <Route path="/forbidden" element={<Forbidden />} />
 
