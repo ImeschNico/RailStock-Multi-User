@@ -8,6 +8,7 @@ import com.railStock.rail_stock.dto.GesamtBestandDTO;
 import com.railStock.rail_stock.entity.Bestand;
 import com.railStock.rail_stock.entity.Lagerplatz;
 import com.railStock.rail_stock.entity.Lok;
+import com.railStock.rail_stock.exception.LokNotFoundException;
 import com.railStock.rail_stock.mapper.BestandMapper;
 import com.railStock.rail_stock.repository.BestandRepository;
 import com.railStock.rail_stock.repository.LagerplatzRepository;
@@ -89,14 +90,14 @@ public class BestandService {
         // Lagerplatz prüfen
         Lagerplatz lagerplatz = lagerplatzRepository
                 .findByRegalAndTablarIgnoreCase(regal, tablar)
-                .orElseThrow(() -> new RuntimeException("Lagerplatz nicht gefunden"));
+                .orElseThrow(() -> new NotFoundException("Lagerplatz nicht gefunden"));
 
         // Bestand suchen
         Bestand bestand = bestandRepository
                 .findByLokAndLagerplatz(lokArtNumber, regal, tablar)
                 .orElseGet(() -> {
                     Lok lok = lokRepository.findByArtNumber(lokArtNumber)
-                            .orElseThrow(() -> new RuntimeException("Lok nicht gefunden"));
+                            .orElseThrow(() -> new LokNotFoundException(lokArtNumber));
 
                     Bestand neu = new Bestand();
                     neu.setLok(lok);

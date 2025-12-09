@@ -2,14 +2,14 @@ package com.railStock.rail_stock.exception;
 
 public class LokNotFoundException extends RuntimeException {
 
-    private final Long lokId;
+    private final String artNumber;
 
-    public LokNotFoundException(Long lokId) {
-        super("Lok mit ID " + lokId + " wurde nicht gefunden.");
-        this.lokId = lokId;
+    public LokNotFoundException(String artNumber) {
+        super("Lok mit ID " + artNumber + " wurde nicht gefunden.");
+        this.artNumber = artNumber;
     }
 
-    public Long getLokId() {
-        return lokId;
+    public String getArtNumber() {
+        return artNumber;
     }
 }

@@ -30,7 +30,7 @@ public class GlobalExceptionHandler {
 
         ErrorResponseDTO error = new ErrorResponseDTO(
                 "LOK_NOT_FOUND",
-                "Lok mit ID " + ex.getLokId() + " wurde nicht gefunden.",
+                "Lok mit ID " + ex.getArtNumber() + " wurde nicht gefunden.",
                 404,
                 extractPath(request)
         );
