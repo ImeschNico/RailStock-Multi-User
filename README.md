@@ -1,4 +1,4 @@
-### RailStock Multi-User ###
+# RailStock Multi-User #
 
 ## Einführung ##
 
