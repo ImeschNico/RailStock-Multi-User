@@ -88,4 +88,10 @@ public class LokController {
         return lokService.createLok(dto);
     }
 
+    @PutMapping("/admin/{id}/edit")
+    @PreAuthorize("hasRole('ADMIN')")
+    public LokDTO editLok(@PathVariable Long id, @RequestBody LokFormDTO dto){
+        return lokService.duplicateLokWithChanges(id, dto);
+    }
+
 }

@@ -5,10 +5,12 @@ import com.railStock.rail_stock.dto.LokDTO;
 import com.railStock.rail_stock.dto.LokFormDTO;
 import com.railStock.rail_stock.entity.Hersteller;
 import com.railStock.rail_stock.entity.Lok;
+import com.railStock.rail_stock.exception.LokNotFoundException;
 import com.railStock.rail_stock.mapper.LokMapper;
 import com.railStock.rail_stock.repository.HerstellerRepository;
 import com.railStock.rail_stock.repository.LagerplatzRepository;
 import com.railStock.rail_stock.repository.LokRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,6 +42,7 @@ public class LokService {
 
     }
 
+    @Transactional
     public LokDTO createLok(LokFormDTO dto){
        Lok lok = new Lok(
                dto.getArtNumber(),
@@ -58,6 +61,44 @@ public class LokService {
         lok.setHersteller(hersteller);
        Lok saved = lokRepository.save(lok);
        return LokMapper.toDTO(saved);
+    }
+
+    @Transactional
+    public LokDTO duplicateLokWithChanges(Long orginalId, LokFormDTO dto){
+        Lok original = lokRepository.findById(orginalId)
+                .orElseThrow(() -> new LokNotFoundException("Lok with id " + orginalId + " not found"));
+
+        //Neue Artnummer automatisch labeln
+        String newArtNumber = dto.getArtNumber();
+        if (newArtNumber == null || newArtNumber.isEmpty()) {
+            newArtNumber = dto.getArtNumber() + "_edit";
+        }
+
+        Lok copy = new Lok(
+                newArtNumber,
+                dto.getBezeichnung() != null ? dto.getBezeichnung() : original.getBezeichnung(),
+                dto.getTyp() != null ? dto.getTyp() : original.getTyp(),
+                dto.getModell() != null ? dto.getModell() : original.getModell(),
+                dto.getStromart() != null ? dto.getStromart() : original.getStromart(),
+                dto.getSpur() != null ? dto.getSpur() : original.getSpur(),
+                dto.getEpoche() != null ? dto.getEpoche() : original.getEpoche(),
+                dto.getBetriebsart() != null ? dto.getBetriebsart() : original.getBetriebsart()
+        );
+
+        Hersteller hersteller = null;
+        if (dto.getHerstellerName() != null ) {
+            hersteller = herstellerRepository.findByName(dto.getHerstellerName());
+            if (hersteller == null) {
+                throw new IllegalArgumentException("Hersteller existiert nicht");
+            }
+        }
+        else {
+            hersteller = original.getHersteller();
+        }
+
+        copy.setHersteller(hersteller);
+        Lok saved = lokRepository.save(copy);
+        return LokMapper.toDTO(saved);
     }
 
     /**
