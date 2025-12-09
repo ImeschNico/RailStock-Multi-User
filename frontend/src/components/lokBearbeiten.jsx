@@ -41,7 +41,7 @@ export const LokBearbeiten = () => {
         <LokErstellen
           initialData={{
             ...lokData,
-            artNumber: `${lokData.artNumber}`,
+            artNumber: `${lokData.artNumber}_edit`,
             herstellerName: lokData.hersteller?.name || "",
           }}
         />

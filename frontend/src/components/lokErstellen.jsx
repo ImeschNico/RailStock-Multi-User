@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { createLok } from "../services/lok-serivce";
+import { createLok, editLok } from "../services/lok-serivce";
 import { Button } from "./button";
 
-export const LokErstellen = ({ initialData = {} }) => {
+export const LokErstellen = ({ initialData = {}, onSaved }) => {
   const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
     artNumber: initialData.artNumber || "",
@@ -33,27 +33,47 @@ export const LokErstellen = ({ initialData = {} }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Gesendete Daten:", formData);
-    createLok(formData);
-    setMessage(`Lok ${formData.artNumber} erfolgreich erstellt`);
+    try {
+      let savedLok;
+      if (formData.id) {
+        savedLok = await editLok(formData.id, formData); // Bearbeiten/Duplizieren
+      } else {
+        savedLok = await createLok(formData); // Neue Lok
+      }
+      setMessage(`Lok ${savedLok.artNumber} erfolgreich gespeichert`);
+      if (onSaved) onSaved(savedLok);
+    } catch (err) {
+      console.error(err);
+      setMessage("Fehler beim Speichern");
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="lok-form">
-      <h2 className="lok-form-title">Neue Lok erstellen:</h2>
+      <h2 className="lok-form-title">
+        {formData.id ? "Lok bearbeiten / duplizieren" : "Neue Lok erstellen"}
+      </h2>
       {message && <p className="lok-message">{message}</p>}
-      {Object.entries(formData).map(([key, value]) => (
-        <div key={key} className="lok-form-group">
-          <label className="lok-label">{labelMap[key]}</label>
-          <input type="text" name={key} value={value} onChange={handleChange} />
-        </div>
-      ))}
+      {Object.entries(formData).map(
+        ([key, value]) =>
+          key !== "id" && (
+            <div key={key} className="lok-form-group">
+              <label className="lok-label">{labelMap[key]}</label>
+              <input
+                type="text"
+                name={key}
+                value={value}
+                onChange={handleChange}
+              />
+            </div>
+          )
+      )}
 
       <Button
         className="lok-form-button"
-        text={"Lok hinzufügen"}
+        text={formData.id ? "Änderungen speichern" : "Lok hinzufügen"}
         onAnswerClick={handleSubmit}
       />
     </form>

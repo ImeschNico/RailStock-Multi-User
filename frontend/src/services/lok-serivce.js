@@ -18,3 +18,14 @@ export const createLok = async (formData) => {
   const res = await apiClient.post(`/loks/admin/neu`, formData);
   return res.data;
 };
+
+/**
+ * Bearbeitet / dupliziert eine Lok
+ * @param {number} id - ID der zu bearbeitenden Original-Lok
+ * @param {object} lokData - Änderungen für die neue Lok (ArtNumber optional)
+ * @returns {Promise<object>} - zurückgegebene DTO der neuen Lok
+ */
+export const editLok = async (id, lokData) => {
+  const res = await apiClient.put(`/loks/admin/${id}/edit`, lokData);
+  return res.data;
+};
