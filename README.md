@@ -61,7 +61,11 @@ Benutzerrollen:
 User -> darf Loks verwalten, Bestand anpassen/transferieren und Lagerplätze erstellen
 Admin -> darf Loks bearbeiten oder erstellen  
 
+---
 
+## Backend Dokumentation ##
+
+Zur Ausführlichen Dokumentation der Backend Architektur geehts hier: !(Backend Architketur Dokumentation)[backend/src/docs/readme.md]
 
 
 
