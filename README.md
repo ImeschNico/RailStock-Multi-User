@@ -65,7 +65,7 @@ Admin -> darf Loks bearbeiten oder erstellen
 
 ## Backend Dokumentation ##
 
-Zur Ausführlichen Dokumentation der Backend Architektur geehts hier: !(Backend Architketur Dokumentation)[backend/src/docs/readme.md]
+Zur Ausführlichen Dokumentation der Backend Architektur geehts hier: ![Backend Architketur Dokumentation](backend/src/docs/readme.md)
 
 
 
