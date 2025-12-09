@@ -6,18 +6,20 @@ import { Button } from "./button";
 
 export const Layout = () => {
   const { isAuthenticated, user, logout } = useAuth();
+  const hideLayout = window.location.pathname === "/login";
   return (
     <div className="app">
-      <header className="app-header">
-        <Navigation />
-        <h1 className="app-title">RailStock</h1>
-        {isAuthenticated && (
-          <div>
-            <span>Hallo, {user.username}!</span>
-            <Button onClick={logout}>Logout</Button>
-          </div>
-        )}
-      </header>
+      {!hideLayout && (
+        <header className="app-header">
+          <Navigation />
+          <h1 className="app-title">RailStock</h1>
+          {isAuthenticated && (
+            <div>
+              <span>Hallo, {user.username}!</span>
+            </div>
+          )}
+        </header>
+      )}
 
       <main className="layout-main-content">
         <div className="page-container">
@@ -25,10 +27,12 @@ export const Layout = () => {
         </div>
       </main>
 
-      <footer className="layout-footer">
-        <p>© RailStock. All rights reserved</p>
-        <p>Made with ❤️ by Nico Imesch</p>
-      </footer>
+      {!hideLayout && (
+        <footer className="layout-footer">
+          <p>© RailStock. All rights reserved</p>
+          <p>Made with ❤️ by Nico Imesch</p>
+        </footer>
+      )}
     </div>
   );
 };

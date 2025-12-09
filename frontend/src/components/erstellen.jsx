@@ -15,7 +15,7 @@ export const Erstellen = () => {
     setError(null);
 
     try {
-      const data = await createLagerplatz(regal, tablar);
+      const data = await createLagerplatz({ regal, tablar });
       setMessage(`Lagerplatz ${regal}-${tablar} erfolgreich erstellt`);
       setRegal("");
       setTablar("");

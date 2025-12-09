@@ -5,7 +5,9 @@ export const getHersteller = async () => {
   return res.data;
 };
 
-export const getBestandByHersteller = async (name) => {
-  const res = await apiClient.get(`/bestand/hersteller/${name}`);
+export const getBestandByHersteller = async (hersteller) => {
+  const res = await apiClient.get(
+    `/loks/filter?hersteller=${encodeURIComponent(hersteller)}`
+  );
   return res.data;
 };

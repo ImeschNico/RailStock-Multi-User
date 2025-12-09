@@ -73,8 +73,7 @@ export const AuthProvider = ({ children }) => {
       console.log("AuthContext Login erfolgreich");
       return response;
     } catch (error) {
-      console.error("AuthContext Login fehlgeschlagen");
-      throw error;
+      throw new Error(error.response?.data?.message || "Login fehlgeschlagen");
     }
   };
 
@@ -87,6 +86,8 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
     setUser(null);
     setIsAuthenticated(false);
+
+    console.log("AuthContext:Logout erfolgreich");
     window.location.href = "/";
   };
 

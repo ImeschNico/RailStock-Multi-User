@@ -1,9 +1,16 @@
 import apiClient from "./api-client";
 
 export const getBestandByArtNumber = async (artNumber) => {
-  const res = await apiClient.get(`/bestand/lok/${artNumber}`);
-  if (!res.ok) throw new Error("Fehler beim Laden des Bestandes");
-  return res.json();
+  try {
+    const res = await apiClient.get(`/bestand/lok/${artNumber}`);
+    return res.data; // Axios hat direkt .data
+  } catch (error) {
+    console.error(
+      "Fehler beim Laden des Bestandes:",
+      error.response?.data || error.message
+    );
+    throw new Error("Fehler beim Laden des Bestandes");
+  }
 };
 
 export const updateBestand = async ({ artNumber, regal, tablar, menge }) => {
@@ -13,7 +20,7 @@ export const updateBestand = async ({ artNumber, regal, tablar, menge }) => {
     tablar,
     menge,
   });
-  return res.json();
+  return res.data;
 };
 
 export const transferBestand = async ({
@@ -32,11 +39,10 @@ export const transferBestand = async ({
     zuTablar,
     menge,
   });
-  return res.json();
+  return res.data;
 };
 
-//Api aufruf zum sehen der Menge aller Bestände
 export const getGesamtBestand = async () => {
   const res = await apiClient.get(`/bestand/alle`);
-  return res.json();
+  return res.data;
 };

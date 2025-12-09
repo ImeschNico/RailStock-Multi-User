@@ -10,17 +10,29 @@ import { Admin } from "./Pages/Admin";
 import Login from "./Pages/Login";
 import ProtectedRoute from "./components/protected-routes";
 import Forbidden from "./Pages/Forbidden";
+import { LokFilterPage } from "./Pages/LokFilterPage";
+import { useAuth } from "./contexts/AuthContext";
+import { Navigate } from "react-router-dom";
 
 function App() {
+  const { isAuthenticated } = useAuth();
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Login />} />
-        {/*öffentleiche Routes */}
-        <Route path="/login" index element={<Login />} />
+        {/* Index Route */}
+        <Route
+          index
+          element={isAuthenticated ? <Navigate to="/home" /> : <Login />}
+        />
+
+        {/* Öffentliche Routes */}
+        <Route
+          path="/login"
+          element={isAuthenticated ? <Navigate to="/home" /> : <Login />}
+        />
         <Route path="/forbidden" element={<Forbidden />} />
 
-        {/* GEschützte Routes für eingeloggte User*/}
+        {/* Geschützte Routes */}
         <Route
           path="/home"
           element={
@@ -29,7 +41,14 @@ function App() {
             </ProtectedRoute>
           }
         />
-
+        <Route
+          path="/loks/filter"
+          element={
+            <ProtectedRoute>
+              <LokFilterPage />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/suche"
           element={
@@ -38,7 +57,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/bestand"
           element={
@@ -47,7 +65,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/lagerplatz"
           element={
@@ -56,7 +73,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/hersteller"
           element={
@@ -65,8 +81,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/*Admin Route - nur für Admins*/}
         <Route
           path="/admin"
           element={

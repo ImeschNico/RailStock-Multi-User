@@ -86,24 +86,16 @@ const LoginForm = ({ onLogin }) => {
     const passwordOk = validatePassword(password);
 
     //Bei Fehler abbbrechen
-    if (!usernameOrEmailOk || !passwordOk) {
-      return;
-    }
+    if (!usernameOrEmailOk || !passwordOk) return;
+
     setIsLoading(true);
+    const loginData = { usernameOrEmail, password };
 
-    //Login Daten an PArent übergeben
-    const loginData = {
-      usernameOrEmail: usernameOrEmail,
-      password: password,
-    };
-
-    //Parent Funktion aufrufen
     try {
       if (onLogin) {
         await onLogin(loginData);
       }
     } catch (error) {
-      //Error wird im Parent behandlet$
       console.error("LoginForm Error", error);
     } finally {
       setIsLoading(false);
@@ -132,6 +124,11 @@ const LoginForm = ({ onLogin }) => {
         <label htmlFor="usernameOrEmail">
           Benutzername oder Email <span className="required">*</span>
         </label>
+        <p>
+          {usernameOrEmailError && (
+            <span className="error-message">{usernameOrEmailError}</span>
+          )}
+        </p>
         <input
           type="text"
           id="usernameOrEmail"
@@ -141,9 +138,6 @@ const LoginForm = ({ onLogin }) => {
           className={getInputClassName(usernameOrEmailError, usernameOrEmail)}
           disabled={isLoading}
         />
-        {usernameOrEmailError && (
-          <span className="error-message">{usernameOrEmailError}</span>
-        )}
       </div>
 
       {/* PASSWORD INPUT */}
@@ -151,6 +145,11 @@ const LoginForm = ({ onLogin }) => {
         <label htmlFor="password">
           Passwort <span className="required">*</span>
         </label>
+        <p>
+          {passwordError && (
+            <span className="error-message">{passwordError}</span>
+          )}
+        </p>
         <input
           type="password"
           id="password"
@@ -160,16 +159,13 @@ const LoginForm = ({ onLogin }) => {
           className={getInputClassName(passwordError, password)}
           disabled={isLoading}
         />
-        {passwordError && (
-          <span className="error-message">{passwordError}</span>
-        )}
       </div>
 
       {/* SUBMIT BUTTON */}
       <div className="form-submit">
         <Button
           text={isLoading ? "Lädt..." : "Einloggen"}
-          onAnswerClick={handleSubmit}
+          type="submit"
           disabled={isLoading}
           className="submit-button"
         />
