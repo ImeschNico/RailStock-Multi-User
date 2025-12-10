@@ -160,3 +160,339 @@ Das Datenbankdiagramm von RailStock bildet die Struktur der Anwendung und die Be
 -	Attribute: ID, Name, Beschreibung.
 -	Beziehung: Ein Benutzer kann genau eine Rolle besitzen (OneToMany von Rolle zu Benutzer).
 -	Rollen bestimmen, welche Aktionen ein Benutzer durchführen darf, z. B. Loks anlegen oder Benutzer verwalten.
+
+---
+
+## JWT-Authentifizierungs-Flow ##
+
+![JWT1](JWT1.png)
+
+## Registrierung ##
+
+### Schritt 1 ###
+**Der Benutzer sendet seine Daten an das Frontend**
+
+Das Frontend schickt eine JSON-Payload ans Backend. Diese sieht so aus:
+
+```JSON
+{
+  "username": "max",
+  "email": "max@example.com",
+  "password": "meinPasswort123"
+}
+```
+---
+
+### Schritt 2 ###
+
+**Das Backend empfängt den Request**
+
+Das Backend hat dafür einen Endpoint:
+
+```arduino
+POST /api/auth/register
+```
+
+Der Controller übergibt die Daten an AppUserService, besser gesagt an **registerUser()**,
+dieser Service/Methode ist für die Registrierung verantwortlich.
+
+
+---
+
+### Schritt 3 ###
+
+**Passwort wird gehasht**
+
+Da das Passwort niemals im Klartext gespeichert werden sollte, nutzen wir einen 
+Passwort-Encoder(ByCrypt).
+
+Zum Verständniss macht diese Methode:
+
+1. Erhält Passwort im Klartext.
+2. Hasht das Passwort mithilfe von ByCrypt.
+```ini
+hashedPassword = ByCrypt.encode(password)
+```
+Das Ergebnis sieht dann etwa so aus:
+```javascript
+$2a$10$8273JH....etc
+```
+3. Und speichert User und gehashtes Passwort
+
+---
+
+### Schritt 4 ###
+
+**Ein neuer Benutzer wird in der Datenbank gespeichert**
+
+In die Tabelle app_users wird folgendes eingetragen
+
+| id | username | email | password_hash | role |
+| -- | -------- | ----- | ------------- | ---- |
+| 1  | max      | max@… | $2a$10$…      | USER |
+
+Zum Schluss schickt das Backend eine Bestätigung:
+
+```JSON
+{ "message": "User registered successfully" }
+```
+---
+
+## Login ##
+
+![JWT2](JWT2.png)
+
+### Schritt 1 ###
+
+**Der Benutzer sendet seine Login-Daten an:**
+
+```arduino
+POST /api/auth/login
+```
+Dies beinhaltet:
+
+```JSON
+{
+  "username": "max",
+  "password": "meinPasswort123"
+}
+```
+
+---
+
+### Schritt 2 ###
+
+**Backend prüft, ob der User existiert**
+
+Backend lädt den User aus app_users und vergleicht Passwörter:
+
+Dies sieht so aus:
+
+```scss
+passwordEncoder.matches(rawPassword, hashedPassword)
+```
+
+- Wenn alles korrekt ist -> Success, weiter.
+- Wenn es einen Fehler gibt -> Fehler.
+
+--- 
+
+### Schritt 3 ###
+
+**JWT wird erstellt**
+
+Das Backend erzeugt einen JWT(JSON Web Token), der etwa so aussieht:
+
+```ini
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9…
+```
+
+---
+
+### Schritt 4 ###
+
+**Token wird an das Frontend zurück geschickt**
+
+Der Token wird im localStorage gespeichert, da wir keine Cookies benutzen.
+
+Das Frontend empfängt ein JSON das etwa so aussieht:
+
+```JSON
+{
+	"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NTE5MDk0MywiZXhwIjoxNzY1Mjc3MzQzfQ.dxQteot5ghxaAZtKuCd9-iPJ51xikmeAyjIOGshNs0E",
+	"userId": 5,
+	"username": "admin",
+	"email": "admin@quiz.com",
+	"role": "ADMIN",
+	"expiresIn": 86400000,
+	"tokenType": "Bearer"
+}
+```
+
+Mit diesem Token kann der User dann auf protected-routes zugreifen,
+also Endpoints für die man eine Role mit Berechtigungen hat.
+
+---
+
+### Schritt 5 ###
+
+**Der JwtAutenticationFilter extrahiert den Header des Token**
+
+1. Sprich der Header mit Bearer <JWT> wird extrahiert.
+2. Der Token wird validiert.
+3. Wenn das klappt werden UserDetails aus der DB geladen.
+4. Der SecurityContext wird gesetzt 
+5. Der gültige Token wird an das Frontend geschickt
+
+---
+
+## Tech Stack ##
+
+| **Technologie**       | **Version**                                 | **Verwendung**                                                              |
+| --------------------- | ------------------------------------------- | --------------------------------------------------------------------------- |
+| **Java**              | 21                                          | Programmiersprache des Backends                                             |
+| **Spring Boot**       | 3.5.6                                       | Backend-Framework, startet die Applikation, bietet Web, JPA, Security, etc. |
+| **Spring Security**   | 6.1.0 (kommt mit Spring Boot 3.5.6)         | Authentifizierung & Rollenverwaltung                                        |
+| **JWT (JJWT)**        | 0.11.5                                      | Token-basierte Authentifizierung                                            |
+| **JPA / Hibernate**   | Hibernate 6.x (kommt mit Spring Boot 3.5.6) | ORM für Datenbankzugriffe                                                   |
+| **Spring Validation** | 3.5.6 (über Spring Boot Starter)            | DTO- und Request-Validierung                                                |
+| **PostgreSQL**        | 16                                          | Relationale Datenbank                                                       |
+| **BCrypt**            | enthalten in Spring Security                | Passwort-Hashing                                                            |
+| **Maven**             | 3.x                                         | Build-Tool & Dependency-Management                                          |
+| **SpringDoc OpenAPI** | 2.6.0                                       | API-Dokumentation (Swagger UI)                                              |
+| **HikariCP**          | intern (Spring Boot)                        | Connection-Pooling für DB                                                   |
+
+---
+
+## Beschreibung ##
+
+Das Backend von RailStock basiert auf Spring Boot und stellt alle Funktionen der 
+Anwendung über eine REST-API bereit. Um die Multi-User-Anforderungen zu erfüllen, 
+wird Spring Security eingesetzt. Darüber werden Logins, Benutzerrollen und der Zugriff auf Admin- oder Benutzer-Endpunkte gesteuert.
+Sobald sich ein Benutzer anmeldet, erzeugt der JwtService ein JWT-Token, das im 
+Frontend gespeichert wird. Dieses Token wird bei jedem Request automatisch im 
+Authorization-Header mitgeschickt. Der JwtAuthenticationFilter prüft anschließend:
+
+- ob das Token gültig ist
+
+- ob es nicht abgelaufen ist
+
+- welcher Benutzer darin enthalten ist
+
+- welche Rolle der Benutzer besitzt
+
+Erst danach wird der Request an die eigentliche Controller-Methode weitergeleitet.
+Alle Datenbankzugriffe laufen über JPA-Repositories, sodass keine eigenen 
+SQL-Statements geschrieben werden müssen. Hibernate übersetzt die Entitäten 
+automatisch in Tabellen und kümmert sich um Abfragen, Relationen und Updates. 
+Für die Sicherheit der Benutzerkonten werden alle Passwörter beim Registrieren 
+mit BCrypt gehasht gespeichert, damit nie Klartext-Passwörter in der Datenbank liegen.
+PostgreSQL dient als zentrale Datenbank für Lok-Bestände, Lagerplätze, 
+Benutzerkonten und Rollen. Mit diesem Setup entsteht eine klare, sichere und 
+erweiterbare Serverarchitektur, die perfekt zu einer 
+Multi-User-Lagerverwaltungsapplikation passt.
+
+---
+
+## Test Protokoll ##
+
+| Test-ID | Testname                   | Testtyp   | Ziel / Zweck                                                         | Vorgehensweise                                                                                                                                                             | Erwartetes Ergebnis                                                                                       | Ergebnis                              |
+| ------- | -------------------------- | --------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| **T1**  | Lok anlegen                | Unit-Test | Prüft, ob `LokService` eine Lok korrekt erstellt                     | 1. Erstelle `LokDTO` mit Name & Hersteller<br>2. Rufe `LokService.createLok(dto)` auf<br>3. Mock `lokRepository.save`                                                      | `Lok` wird zurückgegeben, Name & Hersteller stimmen, Repository.save wird genau einmal aufgerufen         | Erfolgreich / alle Assertions erfüllt |
+| **T2**  | User Registrierung & Login | Unit-Test | Prüft, ob `AppUserService` Registrierung & Auth korrekt funktioniert | 1. Erstelle `AppUser` mit username, email, password, role<br>2. Mock PasswordEncoder (`encode`) und Repository (`save`)<br>3. Rufe `registerUser` & `authenticateUser` auf | Neuer `AppUser` wird zurückgegeben, Passwort gehashed, Login erfolgreich, Repository.save wird aufgerufen | Erfolgreich / alle Assertions erfüllt |
+
+---
+
+## Test Resultate ##
+
+**Test 1**
+
+![Test1](Test1.png)
+
+---
+
+**Test 2**
+
+![Test2](Test2..png)
+
+---
+
+## Set-up Guide/ Installation ##
+
+### 1. Projekt herunterladen ###
+
+- Repository klonen oder ZIP herunterladen:
+
+```bash
+git clone https://github.com/ImeschNico/RailStock.git
+cd RailStock
+```
+
+---
+
+### 2. Voraussetzungen ###
+
+Docker (Version ≥ 20.x)
+
+Docker Compose (Version ≥ 1.29.x)
+
+Optional: Datenbank-Client wie DBeaver, falls direkter DB-Zugriff gewünscht ist
+
+---
+
+### 3. Docker Setup ###
+
+Docker Compose starten
+
+```bash
+cd src/main/java/com/railStock/rail_stock/docker/docker-compose.yml
+docker-compose up -d
+```
+
+---
+
+### 4. Datenbank ###
+
+- Der DataLoader im Backend sorgt automatisch dafür, dass Testdaten (Loks, Benutzer) bei jedem Start eingespielt werden.
+
+- Kein manueller SQL-Import nötig.
+
+--- 
+
+### 5. Enviroment Variables erstellen ###
+
+1. **IntelliJ IDEA**
+
+- Run/Debug Configuration öffnen
+
+- Menü: Run → Edit Configurations…
+
+- Wähle deine Spring Boot Application aus.
+
+2. **Environment Variables eintragen**
+
+- Feld: Environment variables
+
+- Werte setzen:
+
+- - DB_USERNAME=railstock_user
+- - DB_PASSWORD=railstock_password
+- - JWT_SECRET=3cbed2a54586f9ea7002d8e2b79226ae23c55d0fb8c16d835f72301037da253c
+
+3. **Speichern und starten**
+
+Run/Debug starten → Spring Boot liest die Variablen automatisch über 
+```bash
+${DB_USERNAME}, ${DB_PASSWORD} und ${JWT_SECRET}
+ ```
+aus der application.properties.
+
+--- 
+
+4. **Backend starten**
+- Backend ist jetzt unter 
+```ini
+http://localhost:8080
+```
+erreichbar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
