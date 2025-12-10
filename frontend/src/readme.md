@@ -9,7 +9,7 @@ Component-Architektur findet man hier:
 
 ## State-Management Flow
 
-![state1](/src/assets/state1.png)
+![state1](./assets/state1.png)
 
 ---
 
