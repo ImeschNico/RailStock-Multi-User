@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getBestandByHersteller } from "../services/hersteller-service";
-import { getGesamtBestand } from "../services/bestand-service";
-import { BestandListe } from "../components/bestandListe";
 
 export const LokFilterPage = () => {
   const location = useLocation();
