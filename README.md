@@ -51,11 +51,29 @@ mein eigenes Projekt weiterzuentwickeln und als Basis zu verwenden, um eine prax
 damit nur Administratoren Umbauten und Änderungen an Lokdaten vornehmen können und diese klar vom normalen
 Benutzerbetrieb getrennt bleiben.
 
-3.	Als Benutzer möchte ich mich registrieren und anmelden können,
+**Akzeptanzkriterien:**
+- Nur Admins können die Seite zum Anlegen und Bearbeiten von Loks sehen.
+- Normale Benutzer haben keinen Zugriff auf diese Seite.
+- Ein Admin kann neue Loks mit allen benötigten Daten erstellen.
+- Ein Admin kann bestehende Loks bearbeiten und die Änderungen werden gespeichert.
+
+2.	Als Benutzer möchte ich mich registrieren und anmelden können,
 damit ich Zugriff auf die Funktionen der Anwendung habe und diese nicht öffentlich einsehbar sind.
 
-4.	Als gleichzeitiger Benutzer möchte ich unabhängig von anderen Nutzern arbeiten können,
+**Akzeptanzkriterien:**
+- Benutzer können sich mit gültigen Daten registrieren.
+- Registrierungen mit bereits verwendeter E-Mail sind nicht möglich.
+- Benutzer können sich mit korrekten Anmeldedaten einloggen.
+- Nicht eingeloggte Benutzer können keine geschützten Bereiche der Anwendung öffnen.
+
+3.	Als gleichzeitiger Benutzer möchte ich unabhängig von anderen Nutzern arbeiten können,
 damit mehrere Personen das System parallel verwenden können, ohne sich gegenseitig zu beeinflussen.
+
+**Akzeptanzkriterien:**
+- Mehrere Benutzer können gleichzeitig arbeiten, ohne sich gegenseitig abzumelden oder zu blockieren.
+- Änderungen an Beständen und Daten werden korrekt verarbeitet, auch wenn mehrere Benutzer gleichzeitig speichern.
+- Das System verhindert Datenkonflikte oder Inkonsistenzen bei gleichzeitigen Änderungen.
+- Das System bleibt auch bei mehreren aktiven Nutzern stabil und performant.
 
 Benutzerrollen:
 User -> darf Loks verwalten, Bestand anpassen/transferieren und Lagerplätze erstellen
@@ -73,9 +91,57 @@ Zur Ausführlichen Dokumentation der Backend Architektur gehts hier: [Backend Ar
 
 Zur Ausführlichen Dokumentation des Frontend gehts hier: [Frontend Dokumentation](frontend/src/readme.md)
 
+---
 
+## Hilfestellungen ##
 
+Das Erstellen einer Multi-User-Applikation war für mich eine neue Herausforderung, da ich bisher noch keine solche Anwendung entwickelt habe.  
+Aus diesem Grund habe ich verschiedene Hilfestellungen in Anspruch genommen:
 
+- Das Tutorial-Projekt unseres Dozenten Graziano Laveder. An dieses Tutorial konnte ich viele Konzepte, insbesondere in Bezug auf Security, auf mein eigenes Projekt übertragen.
+- Unterstützung durch Mitschüler, mit denen ein reger Austausch stattfand, sodass wir uns gegenseitig helfen konnten.
+- Hilfe des Dozenten Graziano Laveder, der mich bei fachlichen Fragen kompetent unterstützt hat.
+- ChatGPT, das ich unter anderem für das Styling des Frontends, das Erstellen der Tests und die Fehlerfindung genutzt habe.
+
+--- 
+
+## Learnings / Erkenntnisse ##
+
+Durch das Projekt konnte ich einige wichtige Learnings mitnehmen, darunter:
+
+- Die Erstellung und der Umgang mit JWT-Token zur Authentifizierung und Autorisierung.
+- Multi-User-Struktur und Rollenmanagement (Unterscheidung zwischen User und Admin, Rechteverwaltung).
+- Integration von Frontend und Backend in einer Multi-User-Applikation.
+- Aufbau und Nutzung von React Context zur globalen State-Verwaltung.
+- Nutzung von Vite als modernes Frontend-Build-Tool.
+- Umgang mit Asynchronität (API-Calls, Ladezustände, Error-Handling).
+- Strukturierung einer komplexen Anwendung (Komponenten, Services, Contexts, Pages).
+- Praxisnahe Fehlerbehebung und Debugging im Zusammenspiel von Frontend und Backend.
+
+---
+
+## Fazit ##
+
+Dieses Projekt war für mich persönlich herausfordernd, nicht nur wegen der neuen Technologien, die ich verwendet habe, 
+sondern auch aufgrund des engen Zeitrahmens von nur einer Woche. Trotz der Herausforderungen bin ich stolz auf das Ergebnis, 
+auch wenn bereits weitere Features geplant sind, wie eine mobile Anwendung oder eine erweiterte User-Verwaltung.
+
+Da RailStock eine Anwendung ist, die echten Mehrwert bieten soll, hatte ich immer ein klares Ziel vor Augen: eine Applikation zu 
+entwickeln, mit der mein Stiefvater und meine Mutter ihren Lagerbestand effizient managen und einen besseren Überblick behalten können.
+
+Zusammenfassend kann man mit RailStock zum aktuellen Zeitpunkt:
+
+- Loks suchen, bearbeiten und erstellen  
+- Bestände anpassen und transferieren  
+- Lagerplätze erstellen  
+- Loks filtern  
+- Registrieren und Einloggen  
+
+Auch wenn RailStock aktuell alle Kernfeatures enthält, um zu funktionieren, ist sie noch lange nicht fertig. Ausblick auf weitere Features:
+
+- User-Verwaltung implementieren  
+- Mobile Applikation entwickeln und einbinden  
+- Mobile Applikation inkl. Strichcode- oder QR-Scanner, um Bestände einfacher kontrollieren zu können
 
 
 
