@@ -5,6 +5,13 @@ import { filterLoks, searchLoks } from "../services/lok-serivce";
 import { SearchField } from "./SearchField";
 import { Button } from "./button";
 
+/**
+ * FilterListe Component
+ * Anzeige einer Liste von Loks mit Such- und Filterfunktion
+ *
+ * @component
+ * @returns {JSX.Element}
+ */
 export const FilterListe = () => {
   const [loks, setLoks] = useState([]);
   const [error, setError] = useState("");

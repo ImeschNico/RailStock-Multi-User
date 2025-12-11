@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Zeigt eine 403 Forbidden-Seite an.
+ * Wird angezeigt, wenn ein Benutzer auf eine Seite zugreifen möchte,
+ * für die er keine Berechtigung hat.
+ *
+ * @component
+ * @returns {JSX.Element} Forbidden
+ */
 const Forbidden = () => {
   return (
     <div

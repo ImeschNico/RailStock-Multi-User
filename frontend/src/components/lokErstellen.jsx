@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import { createLok, editLok } from "../services/lok-serivce";
 import { Button } from "./button";
 
+/**
+ * LokErstellen Component
+ * Formular zum Erstellen oder Bearbeiten einer Lok.
+ *
+ * @param {object} initialData - Optionale Initialwerte für die Lok
+ * @param {function(object):void} [onSaved] - Callback, wenn Lok gespeichert wurde
+ * @component
+ * @returns {JSX.Element}
+ */
+
 export const LokErstellen = ({ initialData = {}, onSaved }) => {
   const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({

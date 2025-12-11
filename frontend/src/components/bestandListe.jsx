@@ -3,6 +3,14 @@ import { getBestandByArtNumber } from "../services/bestand-service";
 import { BestandTabelle } from "./BestandTabelle";
 import { LokDetails } from "./lokDetails";
 
+/**
+ * BestandListe Component
+ * Zeigt Details und Bestand einer Lok anhand der Artikelnummer an.
+ *
+ * @param {string} artNumber - Artikelnummer der Lok
+ * @component
+ * @returns {JSX.Element}
+ */
 export const BestandListe = ({ artNumber }) => {
   const [bestand, setBestand] = useState([]);
   const [loading, setLoading] = useState(false);

@@ -3,6 +3,14 @@ import { Dropdown } from "./dropdown";
 import "../css/Style.css";
 import { Button } from "./button";
 
+/**
+ * Filter Component
+ * Stellt Dropdown-Felder für Epoche, Spur, Typ etc. zur Verfügung
+ *
+ * @param {function(Object):void} onFilterChange - Callback wenn Filter angewendet wird
+ * @component
+ * @returns {JSX.Element}
+ */
 export const Filter = ({ onFilterChange }) => {
   const [epoche, setEpoche] = useState("");
   const [spur, setSpur] = useState("");

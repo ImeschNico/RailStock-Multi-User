@@ -8,6 +8,17 @@ import {
 import { transferBestand } from "../services/bestand-service";
 import "../css/Style.css";
 
+/**
+ * BestandTabelle Component
+ * Zeigt den Bestand einer Lok in einer Tabelle an.
+ * Ermöglicht Bestand-Eingang oder Transfer zwischen Lagerplätzen.
+ *
+ * @param {Array} bestand - Aktuelle Bestand-Daten
+ * @param {function} setBestand - Setter-Funktion für Bestand
+ * @param {number} lokId - ID der Lok
+ * @component
+ * @returns {JSX.Element}
+ */
 export const BestandTabelle = ({ bestand, setBestand, lokId }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);

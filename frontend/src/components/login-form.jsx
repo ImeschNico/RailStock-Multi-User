@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Button } from "./button";
 
+/**
+ * LoginForm Component
+ * Formular für Benutzerlogin
+ *
+ * @param {function(Object):Promise<void>} onLogin - Callback für Login-Versuch
+ * @component
+ * @returns {JSX.Element}
+ */
 const LoginForm = ({ onLogin }) => {
   // ==========================================
   // STATES: Formular-Daten

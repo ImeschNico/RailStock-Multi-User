@@ -3,6 +3,13 @@ import { createLagerplatz } from "../services/lagerplatz-service";
 import { Button } from "./button";
 import { Lagerplatz } from "../Pages/Lagerplatz";
 
+/**
+ * Erstellen Component
+ * Formular zum Anlegen eines neuen Lagerplatzes
+ *
+ * @component
+ * @returns {JSX.Element}
+ */
 export const Erstellen = () => {
   const [regal, setRegal] = useState("");
   const [tablar, setTablar] = useState("");

@@ -4,8 +4,15 @@ import { Outlet } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { Button } from "./button";
 
+/**
+ * Layout Component
+ * Enthält Header, Footer und Main-Content (Outlet für Routen)
+ *
+ * @component
+ * @returns {JSX.Element}
+ */
 export const Layout = () => {
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, user } = useAuth();
   const hideLayout = window.location.pathname === "/login";
   return (
     <div className="app">

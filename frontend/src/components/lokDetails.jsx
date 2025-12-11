@@ -2,6 +2,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { getBestandByArtNumber } from "../services/bestand-service";
 
+/**
+ * LokDetails Component
+ * Zeigt Detailinformationen zu einer Lok anhand der ArtNumber an.
+ *
+ * @param {string} artNumber - Die Artikelnummer der Lok
+ * @param {function(boolean, Array):void} [onLoad] - Optional: Callback wenn Daten geladen wurden
+ * @param {boolean} [isEdit=false] - Optional: ob im Bearbeitungsmodus dargestellt
+ * @component
+ * @returns {JSX.Element}
+ */
 export const LokDetails = ({ artNumber, onLoad, isEdit = false }) => {
   const [bestand, setBestand] = useState([]);
   const [loading, setLoading] = useState(false);

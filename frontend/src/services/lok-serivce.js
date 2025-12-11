@@ -1,11 +1,23 @@
 import apiClient from "./api-client";
 
+/**
+ * Filtert Loks anhand der angegebenen Kriterien.
+ *
+ * @param {Object} filterObj - Objekt mit Filterparametern (z. B. Hersteller, Epoche, Spur).
+ * @returns {Promise<Object[]>} - Ein Array von Lok-Daten, die den Filterkriterien entsprechen.
+ */
 export const filterLoks = async (filterObj) => {
   const params = new URLSearchParams(filterObj);
   const res = await apiClient.get(`/loks/filter?${params.toString()}`);
   return res.data;
 };
 
+/**
+ * Führt eine freie Textsuche nach Loks durch.
+ *
+ * @param {Object} searchParams - Objekt mit Suchparametern (z. B. name, artNumber).
+ * @returns {Promise<Object[]>} - Ein Array von Loks, die der Suchanfrage entsprechen.
+ */
 //Api Aufruf für die freie Textsuche
 export const searchLoks = async (searchParams) => {
   const params = new URLSearchParams(searchParams);
@@ -13,7 +25,12 @@ export const searchLoks = async (searchParams) => {
   return res.data;
 };
 
-//Neue Lok erstellen
+/**
+ * Erstellt eine neue Lok.
+ *
+ * @param {Object} formData - Daten der neuen Lok, z. B. ArtNumber, Bezeichnung, Typ, Hersteller.
+ * @returns {Promise<Object>} - Das DTO der neu erstellten Lok.
+ */
 export const createLok = async (formData) => {
   const res = await apiClient.post(`/loks/admin/neu`, formData);
   return res.data;

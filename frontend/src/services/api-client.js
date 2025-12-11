@@ -1,6 +1,8 @@
 import axios from "axios";
 
-//BASE URL für Spring Boot Backend
+// =======================
+// Axios API Client
+// =======================
 const API_BASE_URL = "http://localhost:8080/api";
 
 //Axios Instance mit Basic Konfigurationen

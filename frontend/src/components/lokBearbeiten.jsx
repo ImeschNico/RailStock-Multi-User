@@ -5,6 +5,13 @@ import { Button } from "./button";
 import { LokErstellen } from "./lokErstellen";
 import { useEffect } from "react";
 
+/**
+ * LokBearbeiten Component
+ * Ermöglicht Suchen, Anzeigen und Bearbeiten/Duplizieren von Loks
+ *
+ * @component
+ * @returns {JSX.Element}
+ */
 export const LokBearbeiten = () => {
   const [artNumber, setArtNumber] = useState("");
   const [detailsOpen, setDetailsOpen] = useState(false);

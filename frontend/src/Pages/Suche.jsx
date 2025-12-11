@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { SearchField } from "../components/SearchField";
 import "../css/Style.css";
-import { FilterListe } from "../components/filterListe";
-import { BestandListe } from "../components/bestandListe";
+
 import { Hersteller } from "../components/hersteller";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Filter } from "../components/filter";
 
+/**
+ * Seite zur Auswahl eines Herstellers für die Lok-Suche.
+ * Nach Auswahl eines Herstellers wird zur gefilterten Lok-Übersicht navigiert.
+ *
+ * @component
+ * @returns {JSX.Element} Suche
+ */
 export const Suche = () => {
   const navigate = useNavigate();
 
+  /**
+   * Wird aufgerufen, wenn ein Hersteller ausgewählt wird.
+   * Navigiert zur Lok-Filterseite mit dem ausgewählten Hersteller.
+   *
+   * @param {string} name - Name des ausgewählten Herstellers
+   */
   const handleHerstellerSelected = (name) => {
     navigate(`/loks/filter?hersteller=${encodeURI(name)}`);
   };

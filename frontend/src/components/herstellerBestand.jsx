@@ -6,13 +6,19 @@ import { useState, useEffect } from "react";
 import { Button } from "./button";
 import { BestandTabelle } from "./BestandTabelle";
 
+/**
+ * HerstellerBestand Component
+ * Zeigt Bestand eines Herstellers an und erlaubt Bearbeitung einzelner Loks
+ *
+ * @component
+ * @returns {JSX.Element}
+ */
 export const HerstellerBestand = () => {
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const hersteller = params.get("hersteller");
   const [bestand, setBestand] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [bearbeiten, setBearbeiten] = useState(false);
   const [lokBestand, setLokBestand] = useState([]);
   const [selectedLok, setSelectedLok] = useState(null);
 

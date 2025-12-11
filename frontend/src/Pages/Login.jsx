@@ -4,11 +4,24 @@ import LoginForm from "../components/login-form";
 import { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 
+/**
+ * Login-Seite für bestehende Benutzer.
+ * Zeigt das Login-Formular an und navigiert bei erfolgreichem Login zur Home-Seite.
+ *
+ * @component
+ * @returns {JSX.Element} Login
+ */
 const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const { login } = useAuth();
 
+  /**
+   * Handler für das Login-Formular.
+   * Ruft den login aus AuthContext auf und navigiert bei Erfolg.
+   *
+   * @param {{ usernameOrEmail: string, password: string }} loginData - Login-Daten
+   */
   const handleLogin = async (loginData) => {
     setError("");
 

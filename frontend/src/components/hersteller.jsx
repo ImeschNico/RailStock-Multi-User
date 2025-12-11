@@ -9,6 +9,15 @@ import rivarossiLogo from "../assets/bild_rivarossi.png";
 import { Button } from "./button";
 import { Filter } from "./filter";
 
+/**
+ * Hersteller Component
+ * Zeigt eine Auswahl an Herstellern mit Logo an.
+ * Callback wird aufgerufen, wenn ein Hersteller ausgewählt wird.
+ *
+ * @param {function(string):void} onSelectedHersteller - Callback beim Klicken auf einen Hersteller
+ * @component
+ * @returns {JSX.Element}
+ */
 export const Hersteller = ({ onSelectedHersteller }) => {
   const [hersteller, setHersteller] = useState([]);
 

@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import { Button } from "./button";
 import "../css/Style.css";
 
+/**
+ * SearchField Component
+ * Eingabefeld zur Suche nach Artikeln oder Loks.
+ *
+ * @param {string} label - Label für das Inputfeld
+ * @param {function(string):void} onSearch - Callback, wenn Suche ausgeführt wird
+ * @component
+ * @returns {JSX.Element}
+ */
 export const SearchField = ({ label, onSearch }) => {
   const [input, setInput] = useState("");
 

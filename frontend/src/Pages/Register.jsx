@@ -2,6 +2,15 @@ import { useState } from "react";
 import { register } from "../services/auth-service";
 import { Link, useNavigate } from "react-router-dom";
 
+/**
+ * Registrierungs-Seite für neue Benutzer.
+ *
+ * Zeigt ein Formular mit Username, Email und Passwort.
+ * Bei erfolgreicher Registrierung wird der Benutzer zum Login weitergeleitet.
+ *
+ * @component
+ * @returns {JSX.Element} Register
+ */
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -11,6 +20,12 @@ const Register = () => {
 
   const navigate = useNavigate();
 
+  /**
+   * Handler für das Registrierungsformular.
+   * Sendet die Daten an das Backend und navigiert nach Erfolg zum Login.
+   *
+   * @param {React.FormEvent} e - Submit-Event
+   */
   const handleRegister = async (e) => {
     e.preventDefault();
     setError("");

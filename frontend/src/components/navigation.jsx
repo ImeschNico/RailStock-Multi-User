@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
+/**
+ * Navigation Component
+ * Zeigt die obere Navigationsleiste an, inkl. Login/Logout und Admin-Links
+ *
+ * @component
+ * @returns {JSX.Element}
+ */
 const Navigation = () => {
   const { user, isAuthenticated, logout } = useAuth();
 

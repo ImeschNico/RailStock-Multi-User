@@ -3,6 +3,13 @@ import { Button } from "../components/button";
 import { LokErstellen } from "../components/lokErstellen";
 import { LokBearbeiten } from "../components/lokBearbeiten";
 
+/**
+ * Admin-Seite für die Verwaltung von Loks.
+ * Ermöglicht das Erstellen neuer Loks oder Bearbeiten bestehender Loks.
+ *
+ * @component
+ * @returns {JSX.Element} Admin
+ */
 export const Admin = () => {
   const [showForm, setShowForm] = useState(false);
   const [showEditFrom, setShowEditForm] = useState(false);
