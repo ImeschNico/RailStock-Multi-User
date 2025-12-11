@@ -51,11 +51,29 @@ mein eigenes Projekt weiterzuentwickeln und als Basis zu verwenden, um eine prax
 damit nur Administratoren Umbauten und Änderungen an Lokdaten vornehmen können und diese klar vom normalen
 Benutzerbetrieb getrennt bleiben.
 
-3.	Als Benutzer möchte ich mich registrieren und anmelden können,
+**Akzeptanzkriterien:**
+- Nur Admins können die Seite zum Anlegen und Bearbeiten von Loks sehen.
+- Normale Benutzer haben keinen Zugriff auf diese Seite.
+- Ein Admin kann neue Loks mit allen benötigten Daten erstellen.
+- Ein Admin kann bestehende Loks bearbeiten und die Änderungen werden gespeichert.
+
+2.	Als Benutzer möchte ich mich registrieren und anmelden können,
 damit ich Zugriff auf die Funktionen der Anwendung habe und diese nicht öffentlich einsehbar sind.
 
-4.	Als gleichzeitiger Benutzer möchte ich unabhängig von anderen Nutzern arbeiten können,
+**Akzeptanzkriterien:**
+- Benutzer können sich mit gültigen Daten registrieren.
+- Registrierungen mit bereits verwendeter E-Mail sind nicht möglich.
+- Benutzer können sich mit korrekten Anmeldedaten einloggen.
+- Nicht eingeloggte Benutzer können keine geschützten Bereiche der Anwendung öffnen.
+
+3.	Als gleichzeitiger Benutzer möchte ich unabhängig von anderen Nutzern arbeiten können,
 damit mehrere Personen das System parallel verwenden können, ohne sich gegenseitig zu beeinflussen.
+
+**Akzeptanzkriterien:**
+- Mehrere Benutzer können gleichzeitig arbeiten, ohne sich gegenseitig abzumelden oder zu blockieren.
+- Änderungen an Beständen und Daten werden korrekt verarbeitet, auch wenn mehrere Benutzer gleichzeitig speichern.
+- Das System verhindert Datenkonflikte oder Inkonsistenzen bei gleichzeitigen Änderungen.
+- Das System bleibt auch bei mehreren aktiven Nutzern stabil und performant.
 
 Benutzerrollen:
 User -> darf Loks verwalten, Bestand anpassen/transferieren und Lagerplätze erstellen
