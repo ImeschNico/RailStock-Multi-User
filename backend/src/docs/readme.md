@@ -109,6 +109,37 @@ Entities werden nicht direkt ans Frontend gesendet, um Sicherheit und Kapselung 
 
 ---
 
+## Transactionals ##
+
+Wieso Transactionals? ```@Transactional``` sorgt dafür, dass mehrere zusammengehörige 
+Datenbankoperationen als eine einzige, unteilbare Einheit ausgeführt werden. Das 
+bedeutet:
+
+Wenn ein Fehler passiert, werden alle Änderungen automatisch zurückgerollt, sodass keine halbfertigen oder inkonsistenten Daten entstehen.
+
+1. Im [BestandService.java](../main/java/com/railStock/rail_stock/service/BestandService.java) in der Methode ```transferBestand``` ist die erste Transactional zu finden.
+
+Die Methode transferBestand führt einen vollständigen Bestandswechsel zwischen zwei Lagerplätzen durch. Sie validiert Quell- und Ziel-Lagerplatz, prüft die verfügbare Bestandsmenge und nimmt alle notwendigen Änderungen an den entsprechenden Bestandsdatensätzen vor.
+Durch @Transactional wird sichergestellt, dass beide Änderungen (Abzug am Quellplatz und Addition am Zielplatz) atomar erfolgen und bei einem Fehler vollständig zurückgerollt werden, um Inkonsistenzen zu vermeiden.
+
+
+2. Im [LokService.java](../main/java/com/railStock/rail_stock/service/LokService.java) in den Methoden 
+```createLok``` und ```duplicateLokWithChanges``` sind weitere Transactionals zu finden.
+
+Die Methoden createLok und duplicateLokWithChanges führen jeweils mehrere abhängige Schritte aus: Laden des Herstellers, Validierungen und das Speichern neuer Lok-Einträge.
+Durch ```@Transactional``` wird sichergestellt, dass diese zusammengehörigen Operationen atomar ausgeführt werden. Falls z. B. ein Hersteller nicht existiert oder eine Validierung fehlschlägt, wird der gesamte Vorgang zurückgerollt.
+So wird verhindert, dass unvollständige oder fehlerhafte Lok-Einträge in der Datenbank landen, und die Datenkonsistenz bleibt jederzeit gewährleistet.
+
+3. Im [AppUserService.java](../main/java/com/railStock/rail_stock/service/AppUserService.java) die ganze Klasse ```AppUserService.java``` eine Transactional.
+
+Der ```AppUserService``` ist als Ganzes mit ```@Transactional``` annotiert. Dadurch werden alle Methoden innerhalb dieses Services automatisch in einer Transaktion ausgeführt.
+Beim Anlegen oder Ändern von Benutzerdaten (z. B. Speichern neuer User, Hashen von Passwörtern, Validierungen) wird so sichergestellt, dass alle Schritte atomar ablaufen.
+Falls während der Verarbeitung ein Fehler auftritt, wird der gesamte Vorgang zurückgerollt und verhindert, dass unvollständige Benutzerkonten oder fehlerhafte Daten gespeichert werden.
+
+Dies schützt besonders sicherheitsrelevante Prozesse wie die Registrierung und Passwortverarbeitung vor Inkonsistenzen.
+
+---
+
 ## Datenbank Diagramm ##
 
 ![DatenbankDiagramm](ERD.png)
