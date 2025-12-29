@@ -13,12 +13,12 @@ export const getHersteller = async () => {
 /**
  * Liefert alle Loks eines bestimmten Herstellers.
  *
- * @param {string} hersteller - Name des Herstellers
+ * @param {string} herstellerName - Name des Herstellers
  * @returns {Promise<Object[]>} - Array von Loks des Herstellers
  */
-export const getBestandByHersteller = async (hersteller) => {
-  const res = await apiClient.get(
-    `/loks/filter?hersteller=${encodeURIComponent(hersteller)}`
-  );
+export const getBestandByHersteller = async (herstellerName) => {
+  const res = await apiClient.get("/loks/filter", {
+    params: { herstellerName },
+  });
   return res.data;
 };

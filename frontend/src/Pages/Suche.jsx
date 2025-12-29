@@ -1,7 +1,7 @@
 import "../css/Style.css";
 
 import { Hersteller } from "../components/hersteller";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Seite zur Auswahl eines Herstellers für die Lok-Suche.
@@ -20,7 +20,7 @@ export const Suche = () => {
    * @param {string} name - Name des ausgewählten Herstellers
    */
   const handleHerstellerSelected = (name) => {
-    navigate(`/loks/filter?hersteller=${encodeURI(name)}`);
+    navigate(`/loks/filter?herstellerName=${encodeURIComponent(name)}`);
   };
 
   return (

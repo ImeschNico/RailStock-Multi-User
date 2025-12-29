@@ -12,7 +12,7 @@ import { getBestandByHersteller } from "../services/hersteller-service";
 export const LokFilterPage = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const hersteller = queryParams.get("hersteller");
+  const hersteller = queryParams.get("herstellerName");
 
   const [loks, setLoks] = useState([]);
   const [loading, setLoading] = useState(true);

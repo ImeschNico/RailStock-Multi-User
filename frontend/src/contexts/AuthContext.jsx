@@ -47,8 +47,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   /**
-   * Login Funktion (aktuell noch Fake)
-   * Wird in Block 4A durch echten API Call ersetzt!
+   * Login Funktion
    *
    * @param {string} usernameOrEmail - Username ODER Email
    * @param {string} password - Passwort
