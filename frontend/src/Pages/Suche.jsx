@@ -17,10 +17,10 @@ export const Suche = () => {
    * Wird aufgerufen, wenn ein Hersteller ausgewählt wird.
    * Navigiert zur Lok-Filterseite mit dem ausgewählten Hersteller.
    *
-   * @param {string} name - Name des ausgewählten Herstellers
+   * @param {string} herstellerName - Name des ausgewählten Herstellers
    */
-  const handleHerstellerSelected = (name) => {
-    navigate(`/loks/filter?herstellerName=${encodeURIComponent(name)}`);
+  const handleHerstellerSelected = (herstellerName) => {
+    navigate(`/api/bestand/hersteller/${encodeURIComponent(herstellerName)}`);
   };
 
   return (

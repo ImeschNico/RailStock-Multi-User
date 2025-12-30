@@ -79,7 +79,7 @@ function App() {
           }
         />
         <Route
-          path="/hersteller"
+          path="/api/bestand/hersteller/:herstellerName"
           element={
             <ProtectedRoute>
               <HerstellerBestand />

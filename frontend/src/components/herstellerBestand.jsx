@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { getBestandByArtNumber } from "../services/bestand-service";
 import { getBestandByHersteller } from "../services/hersteller-service";
 import { useState, useEffect } from "react";
@@ -14,18 +14,15 @@ import { BestandTabelle } from "./BestandTabelle";
  * @returns {JSX.Element}
  */
 export const HerstellerBestand = () => {
-  const { search } = useLocation();
-  const params = new URLSearchParams(search);
-  const hersteller = params.get("hersteller");
+  const { herstellerName } = useParams();
   const [bestand, setBestand] = useState([]);
   const [loading, setLoading] = useState(false);
   const [lokBestand, setLokBestand] = useState([]);
   const [selectedLok, setSelectedLok] = useState(null);
 
   useEffect(() => {
-    if (!hersteller) return;
-
-    const fetchBestand = async (herstellerName) => {
+    const fetchBestand = async () => {
+      if (!herstellerName) return;
       setLoading(true);
       try {
         const data = await getBestandByHersteller(herstellerName);
@@ -38,13 +35,11 @@ export const HerstellerBestand = () => {
       }
     };
 
-    fetchBestand(hersteller);
-  }, [hersteller]);
+    fetchBestand();
+  }, [herstellerName]);
 
   if (loading) return <p>Lade...</p>;
   if (!bestand || bestand.length === 0) return <p>Keine Lok gefunden</p>;
-
-  const lokData = bestand[0].lok;
 
   const handleBearbeiten = async (lok) => {
     try {
@@ -79,7 +74,7 @@ export const HerstellerBestand = () => {
 
   return (
     <div>
-      <h2>Bestand von: {hersteller}</h2>
+      <h2>Bestand von: {herstellerName}</h2>
       <div className="lok-container">
         {bestand.map((b) => (
           <div key={b.id} className="lok-card">
@@ -98,6 +93,12 @@ export const HerstellerBestand = () => {
             <p>
               <strong>Bestand: </strong>
               {b.menge}
+            </p>
+            <p>
+              <strong>Lagerpaltz: </strong>
+              {b.lagerplatz
+                ? `${b.lagerplatz.regal} / ${b.lagerplatz.tablar}`
+                : "Nicht zugeordnet"}
             </p>
             <Button
               text="Bearbeiten"

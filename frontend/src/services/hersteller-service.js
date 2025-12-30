@@ -17,8 +17,8 @@ export const getHersteller = async () => {
  * @returns {Promise<Object[]>} - Array von Loks des Herstellers
  */
 export const getBestandByHersteller = async (herstellerName) => {
-  const res = await apiClient.get("/loks/filter", {
-    params: { herstellerName },
-  });
+  const res = await apiClient.get(
+    `/bestand/hersteller/${encodeURIComponent(herstellerName)}`
+  );
   return res.data;
 };
