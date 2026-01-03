@@ -37,7 +37,7 @@ export default function AdminPage() {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div className="admin-container">
       <h1>Admin – Benutzerverwaltung</h1>
       <AdminUserList users={users} onChangeRole={onChangeRole} />
     </div>

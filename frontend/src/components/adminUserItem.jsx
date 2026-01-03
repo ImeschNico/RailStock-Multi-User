@@ -1,7 +1,9 @@
 export default function AdminUserItem({ user, onChangeRole }) {
   return (
-    <li>
-      {user.username} ({user.role})
+    <li className="admin-user-item">
+      <span>
+        {user.username} ({user.role})
+      </span>
       <select
         value={user.role}
         onChange={(e) => onChangeRole(user.id, e.target.value)}

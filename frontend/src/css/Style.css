@@ -1287,3 +1287,199 @@
     text-shadow: none;
   }
 }
+
+/* ===============================
+   Admin User List Container
+   =============================== */
+.admin-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
+  color: white;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Überschrift */
+.admin-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+/* User List */
+.admin-user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Einzelner User Item */
+.admin-user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+.admin-user-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Username & Role */
+.admin-user-item span {
+  font-weight: 500;
+  color: white;
+}
+
+/* Role Dropdown */
+.admin-user-item select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-user-item select:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.admin-user-item select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Buttons (falls du eigene Buttons für Rollenänderung nutzt) */
+.admin-user-item button {
+  padding: 0.5rem 1rem;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+}
+
+.admin-user-item button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.35);
+}
+
+.admin-user-item button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+/* =================================
+   LIGHT MODE Anpassungen
+   ================================= */
+@media (prefers-color-scheme: light) {
+  .admin-container {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #111;
+  }
+
+  .admin-user-item {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #111;
+  }
+
+  .admin-user-item span {
+    color: #000;
+  }
+
+  .admin-user-item select {
+    background: rgba(255, 255, 255, 0.55);
+    color: #111;
+    border: 1px solid #bbb;
+  }
+
+  .admin-user-item select:focus {
+    border-color: #2196f3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.4);
+  }
+
+  .admin-user-item button {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.7),
+      rgba(240, 240, 240, 0.4)
+    );
+    color: #111;
+  }
+}
+
+/* ===============================
+   Admin Dropdown Dark Mode Verbesserung
+   =============================== */
+.admin-user-item select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px; /* abgerundete Ecken */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #363636; /* dunkler Hintergrund */
+  color: #fdfdfd; /* Text weiß */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  appearance: none; /* entfernt Standard Pfeil je nach Browser */
+}
+
+.admin-user-item select:hover {
+  background-color: #333; /* leicht heller bei Hover */
+}
+
+.admin-user-item select option {
+  background-color: #222; /* dunkler Hintergrund */
+  color: #fdfdfd; /* Textfarbe weiß */
+  padding: 0.5rem 1rem;
+  border-radius: 8px; /* abgerundet – wird nur teilweise unterstützt */
+}
+
+.admin-user-item select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  background-color: #222; /* bleibt gut lesbar beim Focus */
+}
+
+/* Optional: Pfeil immer sichtbar, rundes Dropdown */
+.admin-user-item select::-ms-expand {
+  display: none; /* IE/Edge */
+}
+
+.admin-user-item select option {
+  background-color: #222; /* Optionen auch dunkel */
+  color: #fdfdfd;
+  padding: 0.5rem;
+}

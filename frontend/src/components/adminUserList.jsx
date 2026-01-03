@@ -2,7 +2,7 @@ import AdminUserItem from "./AdminUserItem";
 
 export default function AdminUserList({ users, onChangeRole }) {
   return (
-    <ul>
+    <ul className="admin-user-list">
       {users.map((user) => (
         <AdminUserItem key={user.id} user={user} onChangeRole={onChangeRole} />
       ))}
