@@ -14,6 +14,7 @@ import { LokFilterPage } from "./Pages/LokFilterPage";
 import { useAuth } from "./contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import Register from "./Pages/Register";
+import AdminPage from "./Pages/ADminPage";
 
 function App() {
   const { isAuthenticated } = useAuth();
@@ -91,6 +92,14 @@ function App() {
           element={
             <ProtectedRoute requiredRole="ADMIN">
               <Admin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/user"
+          element={
+            <ProtectedRoute requiredRole="ADMIN">
+              <AdminPage />
             </ProtectedRoute>
           }
         />

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getBestandByArtNumber } from "../services/bestand-service";
 import { getBestandByHersteller } from "../services/hersteller-service";
 import { useState, useEffect } from "react";

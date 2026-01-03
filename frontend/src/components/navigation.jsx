@@ -29,6 +29,7 @@ const Navigation = () => {
 
           {/* Admin-Link */}
           {user?.role === "ADMIN" && <Link to="/admin">Admin</Link>}
+          {user?.role === "ADMIN" && <Link to="/admin/user">Verwaltung</Link>}
         </>
       )}
 
